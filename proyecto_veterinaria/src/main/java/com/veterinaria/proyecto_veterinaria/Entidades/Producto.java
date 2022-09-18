@@ -16,8 +16,6 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
-import com.veterinaria.proyecto_veterinaria.Entidad_usuario.Empleado_Login;
-
 @Entity
 @Table(name = "producto")
 public class Producto {
@@ -50,10 +48,6 @@ public class Producto {
 
     @NotNull
     private Long ruc_proveedor;
-
-    @ManyToOne
-    @JoinColumn(name = "id_empleado")
-    private Empleado_Login empleado;
 
     @ManyToOne
     @JoinColumn(name = "id_categoria")
