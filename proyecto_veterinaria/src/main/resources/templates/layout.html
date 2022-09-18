@@ -15,8 +15,7 @@
 
 <body>
     <div th:fragment="SidebarAdmin" class="d-flex flex-column flex-shrink-0 p-3 bg-light sliderbar ">
-        <a href="../pages/menu-administrador.html"
-            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none ms-4">
+        <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none ms-4">
             <span class="fs-1"><img src="../imagenes/huella.png" alt="huella" height="170" width="170">
                 <h1>I Love Pet</h1>
             </span>
@@ -24,7 +23,7 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="../pages/menu-administrador.html" class="nav-link active" aria-current="page"><img
+                <a th:href="@{/gestionAdmin}" href="../pages/menu-administrador.html" class="nav-link active" aria-current="page"><img
                         alt="agregar-empleados" width="50px" height="40px" src="../imagenes/agregar-usuario.png">
                     Gestión Empleados
                 </a>
@@ -43,9 +42,15 @@
                 </a>
             </li>
             <li>
-                <a href="../pages/productos.html" class="nav-link link-dark"><img alt="productos" width="50px"
+                <a th:href="@{/CatalogoProducto}"  class="nav-link link-dark"><img alt="productos" width="50px"
                         height="40px" src="../imagenes/productos.png">
-                    Productos
+                    Catalogo Productos
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/GestionCategoria}"  class="nav-link link-dark"><img alt="productos" width="50px"
+                        height="40px" src="../imagenes/categoria_producto.png">
+                    Categoría Productos
                 </a>
             </li>
             <li>
