@@ -38,30 +38,30 @@
 
         <div class="py-4 me-auto  ms-auto">
             <div class="card table-hover">
-                <div class="card-header">GESTION DE CATEGORIA</div>
+                <div class="card-header">GESTION DE ROL</div>
                 <div class="card-body">
                     <div class="col-12 text-center">
-                        <a th:href="@{/formularioCategoria}" class="btn btn-primary me-5" type="submit"><img class="pe-1"
-                                src="../imagenes/newCategoria.png" alt="newCategoria" height="30" width="30">Registrar Categoria</a>
+                        <a th:href="@{/formularioRol}" class="btn btn-primary me-5" type="submit"><img class="pe-1"
+                                src="../imagenes/newRol.png" alt="newCategoria" height="30" width="30">Registrar Rol</a>
                     </div>
                     <div>
                         <table class="table ">
                             <thead>
                                 <tr>
                                     <th class="text-center">ID</th>
-                                    <th class="text-center">Categoria</th>
+                                    <th class="text-center">Rol</th>
                                     <th class="text-center">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr th:each="categoria : ${categoria}">
-                                    <td th:text="${categoria.id}"></td>
-                                    <td th:text="${categoria.nombre}"></td>
+                                <tr th:each="rol : ${rol}">
+                                    <td th:text="${rol.id}"></td>
+                                    <td th:text="${rol.nombre}"></td>
                                     <td>
-                                        <a th:href="@{/eliminarCategoria/} + ${categoria.id}" class="btn btn-danger me-1"
+                                        <a th:href="@{/eliminarRol/} + ${rol.id}" class="btn btn-danger me-1"
                                             type="submit"><img src="../imagenes/eliminar.png" alt="huella" height="30"
                                                 width="30"></a>
-                                        <a th:href="@{/formularioCategoria/} + ${categoria.id}"
+                                        <a th:href="@{/formularioRol/} + ${rol.id}"
                                             class="btn btn-warning me-1" type="submit"><img src="../imagenes/editar.png"
                                                 alt="huella" height="30" width="30"></a>
                                     </td>

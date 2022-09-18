@@ -8,8 +8,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name = "categoria")
-public class Categoria {
+@Table(name = "rol")
+public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,16 +33,16 @@ public class Categoria {
         this.nombre = nombre;
     }
 
-    public Categoria(Long id, @NotEmpty String nombre) {
+    public Rol(Long id, @NotEmpty String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    public Categoria(@NotEmpty String nombre) {
+    public Rol(@NotEmpty String nombre) {
         this.nombre = nombre;
     }
 
-    public Categoria() {
+    public Rol() {
     }
-    
-} 
+
+}

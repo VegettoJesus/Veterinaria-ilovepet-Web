@@ -67,16 +67,16 @@ public class CategoriaController {
         if(id > 0){
             categoria = categoriaService.findOne(id);
             if(categoria == null){
-                flash.addFlashAttribute("error","El ID del empleado no existe en la base de datos");
+                flash.addFlashAttribute("error","El ID de la Categoria no existe en la base de datos");
                 return "redirect:/GestionCategoria";
             }
         }else{
-            flash.addFlashAttribute("error","El ID del empleado no puede ser cero");
+            flash.addFlashAttribute("error","El ID de la Categoria no puede ser cero");
             return "redirect:/GestionCategoria";
         }
         
         modelo.put("categoria",categoria);
-        modelo.put("titulo","Modificar Empleado");
+        modelo.put("titulo","Modificar Categoria");
         return "formularioCategoria";
     }
 
