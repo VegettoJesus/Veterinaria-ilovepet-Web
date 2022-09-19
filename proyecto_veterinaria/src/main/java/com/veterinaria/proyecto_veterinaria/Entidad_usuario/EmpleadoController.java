@@ -1,5 +1,6 @@
 package com.veterinaria.proyecto_veterinaria.Entidad_usuario;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -18,14 +19,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.veterinaria.proyecto_veterinaria.Entidades.Rol;
+import com.veterinaria.proyecto_veterinaria.Entidades.RolService;
 import com.veterinaria.proyecto_veterinaria.paginacion.PageRender;
 
 
 @Controller
 public class EmpleadoController {
-    
+     
     @Autowired
     private Empleado_Service empleado_Service;
+
+    @Autowired
+    private RolService rolservice;
 
     @GetMapping("/detalleEmpleado/{id}")
     public String verDetallesDelEmpleado(@PathVariable(value = "id") Long id, Map<String, Object> modelo,RedirectAttributes flash){
@@ -34,6 +40,8 @@ public class EmpleadoController {
             flash.addFlashAttribute("error","El empleado no existe en la base de datos");
             return "redirect:/gestionAdmin";
         }
+        List<Rol> listaRol = rolservice.findAll();
+        modelo.put("listaRol",listaRol);
         modelo.put("empleado", empleado);
         modelo.put("titulo","Detalles del empleado " + empleado.getNombre()+ " " + empleado.getApellido());
         return "detalleEmpleado";
@@ -53,13 +61,14 @@ public class EmpleadoController {
     @GetMapping("/formularioEmpleado")
     public String RegistrarEmpleado(Map<String,Object> modelo){
         Empleado_Login empleado = new Empleado_Login();
+        modelo.put("rol",rolservice.findAll());
         modelo.put("empleado", empleado);
         modelo.put("titulo","Registrar Empleado");
         return "formularioEmpleado";
     }
 
     @PostMapping("/formularioEmpleado")
-    public String guardarEmpleado(@Valid Empleado_Login empleado,BindingResult result,Model modelo, RedirectAttributes flash, SessionStatus status){
+    public String guardarEmpleado(@Valid Empleado_Login empleado,BindingResult result,Model modelo, RedirectAttributes flash, SessionStatus status){  
         if(result.hasErrors()){
             modelo.addAttribute("titulo", "Registrar Empleado");
             return "formularioEmpleado";
@@ -84,7 +93,7 @@ public class EmpleadoController {
             flash.addFlashAttribute("error","El ID del empleado no puede ser cero");
             return "redirect:/gestionAdmin";
         }
-        
+        modelo.put("rol",rolservice.findAll());
         modelo.put("empleado",empleado);
         modelo.put("titulo","Modificar Empleado");
         return "formularioEmpleado";

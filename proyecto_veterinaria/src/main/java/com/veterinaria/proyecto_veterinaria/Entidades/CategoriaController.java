@@ -25,9 +25,9 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
-    @GetMapping("/CatalogoProducto")
-    public String vistaProducto(){
-        return "CatalogoProducto";
+    @GetMapping("/menu-producto")
+    public String vistaMenuProducto(){
+        return "menu-producto";
     }
 
     @GetMapping("/GestionCategoria")

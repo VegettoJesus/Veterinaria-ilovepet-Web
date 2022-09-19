@@ -14,59 +14,53 @@
 <!--SIDEBAR-->
 
 <body>
-    <div th:fragment="SidebarAdmin" class="d-flex flex-column flex-shrink-0 p-3 bg-light sliderbar ">
+    <div th:fragment="SidebarAdmin" class="d-flex flex-column flex-shrink-0 p-3 bg-light sliderbar bar">
         <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none ms-4">
             <span class="fs-1"><img src="../imagenes/huella.png" alt="huella" height="170" width="170">
                 <h1>I Love Pet</h1>
             </span>
         </a>
         <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
+        <ul class="nav nav-tabs flex-column mb-auto">
             <li class="nav-item">
-                <a th:href="@{/gestionAdmin}" href="../pages/menu-administrador.html" class="nav-link active" aria-current="page"><img
+                <a  th:href="@{/gestionAdmin}" href="../pages/menu-administrador.html" class="nav-link link-dark estilo-letra-mascota" aria-current="page"><img
                         alt="agregar-empleados" width="50px" height="40px" src="../imagenes/agregar-usuario.png">
                     Gestión Empleados
                 </a>
             </li>
-            <li>
-                <a href="../pages/agregar-propietarios.html" class="nav-link link-dark"><img
+            <li class="nav-item">
+                <a href="../pages/agregar-propietarios.html" class="nav-link link-dark estilo-letra-mascota"><img
                         alt="agregar-propietario-mascota" width="50px" height="40px"
                         src="../imagenes/agregar-propietario-mascota.png">
                     Agregar Propietarios
                 </a>
             </li>
-            <li>
-                <a href="../pages/agregar-mascota.html" class="nav-link link-dark"><img alt="agregar-mascota"
+            <li class="nav-item">
+                <a href="../pages/agregar-mascota.html" class="nav-link link-dark estilo-letra-mascota"><img alt="agregar-mascota"
                         width="50px" height="40px" src="../imagenes/agregar-mascota.png">
                     Agregar Mascotas
                 </a>
             </li>
-            <li>
-                <a th:href="@{/CatalogoProducto}"  class="nav-link link-dark"><img alt="productos" width="50px"
+            <li class="nav-item">
+                <a th:href="@{/menu-producto}"  class="nav-link link-dark estilo-letra-mascota"><img alt="productos" width="50px"
                         height="40px" src="../imagenes/productos.png">
-                    Catalogo Productos
+                    Productos
                 </a>
             </li>
-            <li>
-                <a th:href="@{/GestionCategoria}"  class="nav-link link-dark"><img alt="productos" width="50px"
-                        height="40px" src="../imagenes/categoria_producto.png">
-                    Categoría Productos
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link link-dark"><img alt="citas" width="50px" height="40px"
+            <li class="nav-item">
+                <a href="#" class="nav-link link-dark estilo-letra-mascota"><img alt="citas" width="50px" height="40px"
                         src="../imagenes/citas.png">
                     Citas
                 </a>
             </li>
-            <li>
-                <a href="#" class="nav-link link-dark"><img alt="servicios" width="50px" height="40px"
+            <li class="nav-item">
+                <a href="#" class="nav-link link-dark estilo-letra-mascota"><img alt="servicios" width="50px" height="40px"
                         src="../imagenes/servicios.png">
                     Servicios
                 </a>
             </li>
-            <li>
-                <a href="#" class="nav-link link-dark"><img alt="ventas-realizadas" width="50px" height="40px"
+            <li class="nav-item">
+                <a href="#" class="nav-link link-dark estilo-letra-mascota"><img alt="ventas-realizadas" width="50px" height="40px"
                         src="../imagenes/ventas-realizadas.png">
                     Ventas Realizadas
                 </a>

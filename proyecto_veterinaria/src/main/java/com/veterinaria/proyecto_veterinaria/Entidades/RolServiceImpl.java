@@ -1,5 +1,6 @@
 package com.veterinaria.proyecto_veterinaria.Entidades;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class RolServiceImpl implements RolService{
     @Autowired
     private RolRepository rolRepository;
+
 
     @Override
     @Transactional(readOnly = true)

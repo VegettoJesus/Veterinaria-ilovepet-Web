@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 </head>
 
-<body>
+<body class="bg-detalle-usuario">
     <div class="container">
         <div th:if="${success != null}" class="alert alert-primary alert-dismissible fade show">
             [[${success}]]>
@@ -40,31 +40,31 @@
 
         <div class="py-4 me-auto  ms-auto">
             <div class="card table-hover">
-                <div class="card-header">GESTION DE EMPLEADOS</div>
-                <div class="card-body">
+                <div class="card-header degradadoFondo ">GESTION DE EMPLEADOS</div>
+                <div class="card-body table-fondo">
                     <div class="col-12 text-center">
-                        <a th:href="@{/formularioEmpleado}" class="btn btn-primary me-5" type="submit"><img class="pe-1"
+                        <a th:href="@{/formularioEmpleado}" class="btn btn-primary me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
                                 src="../imagenes/salvar.png" alt="huella" height="30" width="30">Registrar Empleado</a>
-                        <a th:href="@{/GestionRol}" class="btn btn-success me-5" type="submit"><img class="pe-1"
+                        <a th:href="@{/GestionRol}" class="btn btn-success me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
                             src="../imagenes/rol.png" alt="huella" height="30" width="30">Gestion Rol</a>
                     </div>
                     <div>
-                        <table class="table">
+                        <table class="table table-fondo table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">DNI</th>
-                                    <th class="text-center">Nombre Completo</th>
-                                    <th class="text-center">Usuario</th>
-                                    <th class="text-center">Email</th>
-                                    <th class="text-center">Acciones</th>
+                                    <th class="text-center text-black estilo-letra-mascota">DNI</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Nombre Completo</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Usuario</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Email</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr th:each="empleado : ${empleados}">
-                                    <td th:text="${empleado.dni}"></td>
-                                    <td th:text="${empleado.nombre} + ' '+ ${empleado.apellido}"></td>
-                                    <td th:text="${empleado.usuario}"></td>
-                                    <td th:text="${empleado.email}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${empleado.dni}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${empleado.nombre} + ' '+ ${empleado.apellido}"></td>
+                                    <td class="text-black estilo-letra-mascota" th:text="${empleado.usuario}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${empleado.email}"></td>
                                     <td>
                                         <a th:href="@{/detalleEmpleado/} + ${empleado.id}" class="btn btn-info me-1 "
                                             type="submit"><img src="../imagenes/buscar.png" alt="huella" height="30"

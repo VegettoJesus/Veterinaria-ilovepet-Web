@@ -20,7 +20,7 @@
                                 <h1 class="fs-1 text-diseño-rc2 text-center" th:text="${titulo}"></h1>
                             </div>
                             <hr class="border border-light" />
-                            <form th:action="@{/formularioEmpleado}" method="post" th:object="${empleado}"
+                            <form th:action="@{/formularioEmpleado}" method="post" th:object="${empleado}" enctype="multipart/form-data"
                                 class="row g-3">
                                 <input type="hidden" th:field="*{id}" th:value="${empleado.id}" />
                                 <div class="col-md-4 position-relative">
@@ -112,9 +112,7 @@
                                     <label class="form-label text-diseño-rc2">Rol</label>
                                     <select class="form-select" th:field="*{tipo_rol}"
                                         th:errorclass="'form-control alert-danger">
-                                        <option selected value="Doctor">--Seleccione--</option>
-                                        <option value="Doctor">Doctor</option>
-                                        <option value="Cajero">Cajero</option>
+                                        <option th:each="rol : ${rol}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
                                     </select>
                                 </div>
                                 <div class="col-12 d-grid">

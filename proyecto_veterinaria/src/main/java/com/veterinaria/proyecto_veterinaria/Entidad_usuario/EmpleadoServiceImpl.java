@@ -14,6 +14,7 @@ public class EmpleadoServiceImpl implements Empleado_Service{
     @Autowired
     private Empleado_Repositoriy empleado_Repositoriy;
 
+
     @Override
     @Transactional(readOnly = true)
     public List<Empleado_Login> findAll() {
