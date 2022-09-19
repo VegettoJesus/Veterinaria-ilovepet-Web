@@ -11,10 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -25,20 +23,17 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "Debes especificar el código")
-    @Size(min = 1, max = 50, message = "El código debe medir entre 1 y 50")
+    @NotEmpty
     private String codigo;
 
-    @NotEmpty(message = "Debes especificar el nombre")
-    @Size(min = 1, max = 50, message = "El nombre debe medir entre 1 y 50")
+    @NotEmpty
     private String nombre;
 
     @NotEmpty
     private String descripcion;
     
-    @NotEmpty(message = "Debes especificar el precio")
-    @Min(value = 0, message = "El precio mínimo es 0")
-    private Float precio;
+    @NotNull
+    private float precio;
     
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(iso = ISO.DATE)
@@ -50,20 +45,16 @@ public class Producto {
     @NotNull
     private Date fecha_Registro;
 
-    @NotEmpty(message = "Debes especificar el nombre")
-    @Size(min = 1, max = 50, message = "El nombre debe medir entre 1 y 50")
+    @NotEmpty
     private String marca;
 
-    @NotEmpty(message = "Debes especificar el nombre")
-    @Size(min = 1, max = 50, message = "El nombre debe medir entre 1 y 50")
+    @NotEmpty
     private String nombre_Proveedor;
 
-    @NotNull(message = "Debes especificar tu numero RUC")
-    @Size(min = 11, max = 11, message = "Ingrese rumero RUC de 11 digitos")
+    @NotNull
     private Long ruc_proveedor;
 
-    @NotNull(message = "Debes especificar el stock")
-    @Min(value = 0, message = "La existencia mínima es 0")
+    @NotNull
     private Long stock;
 
     @ManyToOne
@@ -102,11 +93,11 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public Float getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Float precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
 
@@ -158,6 +149,17 @@ public class Producto {
         this.stock = stock;
     }
 
+    public Producto(@NotEmpty String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Producto() {
+    }
+    
+    public boolean sinStock(){
+        return this.stock <= 0;
+    }
+
     public Categoria getCategoria() {
         return categoria;
     }
@@ -167,7 +169,7 @@ public class Producto {
     }
 
     public Producto(Long id, @NotEmpty String codigo, @NotEmpty String nombre, @NotEmpty String descripcion,
-            @NotEmpty Float precio, @NotNull Date fecha_Vencimiento, @NotNull Date fecha_Registro,
+            @NotNull float precio, @NotNull Date fecha_Vencimiento, @NotNull Date fecha_Registro,
             @NotEmpty String marca, @NotEmpty String nombre_Proveedor, @NotNull Long ruc_proveedor, @NotNull Long stock,
             Categoria categoria) {
         this.id = id;
@@ -185,7 +187,7 @@ public class Producto {
     }
 
     public Producto(@NotEmpty String codigo, @NotEmpty String nombre, @NotEmpty String descripcion,
-            @NotEmpty Float precio, @NotNull Date fecha_Vencimiento, @NotNull Date fecha_Registro,
+            @NotNull float precio, @NotNull Date fecha_Vencimiento, @NotNull Date fecha_Registro,
             @NotEmpty String marca, @NotEmpty String nombre_Proveedor, @NotNull Long ruc_proveedor, @NotNull Long stock,
             Categoria categoria) {
         this.codigo = codigo;
@@ -201,14 +203,7 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public Producto(@NotEmpty(message = "Debes especificar el código") @Size(min = 1, max = 50, message = "El código debe medir entre 1 y 50") String codigo) {
-        this.codigo = codigo;
-    }
-
-    public Producto() {
-    }
     
-    public boolean sinStock(){
-        return this.stock <= 0;
-    }
+
+    
 }
