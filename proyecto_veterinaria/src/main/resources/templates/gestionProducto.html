@@ -59,6 +59,8 @@
                                     <th class="text-center text-black estilo-letra-mascota">Nombre Proveedor</th>
                                     <th class="text-center text-black estilo-letra-mascota">Fecha Ingreso</th>
                                     <th class="text-center text-black estilo-letra-mascota">Categoria</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Stock</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Precio</th>
                                     <th class="text-center text-black estilo-letra-mascota">Acciones</th>
                                 </tr>
                             </thead>
@@ -71,10 +73,9 @@
                                     <td class=" text-black estilo-letra-mascota" th:text="${producto.nombre_Proveedor}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${producto.fecha_Registro}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${producto.categoria.nombre}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${producto.stock}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${producto.precio}"></td>
                                     <td>
-                                        <a th:href="@{/detalleProducto/} + ${producto.id}" class="btn btn-info me-1 "
-                                            type="submit"><img src="../imagenes/buscar.png" alt="huella" height="30"
-                                                width="30"></a>
                                         <a th:href="@{/eliminarProducto/} + ${producto.id}" class="btn btn-danger me-1"
                                             type="submit"><img src="../imagenes/eliminar.png" alt="huella" height="30"
                                                 width="30"></a>

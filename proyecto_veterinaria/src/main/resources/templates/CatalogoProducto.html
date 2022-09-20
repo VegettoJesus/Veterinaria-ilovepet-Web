@@ -49,8 +49,10 @@
 
     <div class="row g-0">
       <div class="card mx-auto border-menuProd border-3 mb-4" style="width: 16rem;" th:each="producto : ${producto}">
-        <img src="../imagenes/default-compra.jpg" class="card-img-top" alt="shampooCachorros" width="150rem"
+        <img th:if="${producto.categoria.nombre == 'Higiene'}" src="../imagenes/default-compra2.jpg" class="card-img-top" alt="shampooCachorros" width="150rem"
           height="230rem">
+        <img th:if="${producto.categoria.nombre != 'Higiene'}" src="../imagenes/default-compra.jpg" class="card-img-top" alt="shampooCachorros" width="150rem"
+          height="230rem">  
         <div class="card-body">
           <h5 class="card-title text-center text-diseño-mpc" th:text="${producto.nombre}"></h5>
           <p class="card-text" th:text="${producto.descripcion}"></p>
