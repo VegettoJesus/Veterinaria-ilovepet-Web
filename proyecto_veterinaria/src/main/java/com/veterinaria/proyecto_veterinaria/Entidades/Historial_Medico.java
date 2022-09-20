@@ -1,11 +1,14 @@
 package com.veterinaria.proyecto_veterinaria.Entidades;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -32,5 +35,10 @@ public class Historial_Medico {
 
     @NotEmpty
     private String estado;
+    
+    @OneToMany
+    @JoinColumn(name = "id_Historial_Medico")
+    private List<Mascota> mascota;
    
+
 }

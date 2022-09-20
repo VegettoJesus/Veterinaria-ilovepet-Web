@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: head">
+    <meta charset="utf-8">
+</head>
+
+<body class="bg-detalle-usuario">
+
+    <div class="wrapper">
+        <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0 p-5 ">
+            <div class="container-fluid">
+                <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-2">
+                    <div class="col mx-auto">
+                        <div class="card shadow-lg p-3 mb-5 bg-body rounded border border-light p-3">
+                            <div class="card-body p-3 rounded text-center">
+                                <img src="../imagenes/mascota.png" alt="registrar-mascota" height="150"
+                                    width="150">
+                                <h3 class="text-diseño-rc text-center" th:text="${titulo}"></h3>
+                            </div>
+                            <hr class="border border-light" />
+                            <form th:action="@{/formularioMascota}" method="post" th:object="${mascota}"
+                                class="row g-3">
+                                <input type="hidden" th:field="*{id}" th:value="${mascota.id}" />
+                                <div class="col-md-5 position-relative">
+                                    <label class="text-diseño-rc2">Nombre</label>
+                                    <input type="text" th:field="*{nombre}" class="form-control"
+                                        th:errorclass="'form-control alert-danger" placeholder="Ingrese nombre de la mascota"
+                                        required>
+                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}"
+                                        th:errors="*{nombre}"></small>
+                                </div>
+                                <div class="col-md-3 position-relative">
+                                    <label class="text-diseño-rc2">Edad (meses) </label>
+                                    <input type="number" th:field="*{edad}" class="form-control"
+                                        th:errorclass="'form-control alert-danger" placeholder="Ingresar numero de meses" required>
+                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('edad')}"
+                                        th:errors="*{edad}"></small>
+                                </div>
+                                <div class="col-md-4 position-relative">
+                                    <label for="validationTooltip05" class="form-label text-diseño-rc2">Sexo</label>
+                                    <select class="form-select form-select mb-3" th:field="*{Sexo}"
+                                        th:errorclass="'form-control alert-danger"
+                                        aria-label=".form-select-lg example">
+                                        <option value="H">Hembra</option>
+                                        <option value="M">Macho</option>
+                                    </select>
+                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('Sexo')}"
+                                        th:errors="*{Sexo}"></small>
+                                </div>
+                                <div class="col-md-3 position-relative">
+                                    <label for="validationTooltip05"
+                                        class="form-label text-diseño-rc2">Especie</label>
+                                    <select class="form-select form-select mb-3" th:field="*{especie}"
+                                        th:errorclass="'form-control alert-danger"
+                                        aria-label=".form-select-lg example">
+                                        <option value="Perro">Perro</option>
+                                        <option value="Gato">Gato</option>
+                                        <option value="Conejo">Conejo</option>
+                                        <option value="Hamster">Hamster</option>
+                                    </select>
+                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('especie')}"
+                                        th:errors="*{especie}"></small>
+                                </div>
+                                <div class="col-md-3 position-relative">
+                                    <label class="text-diseño-rc2">Raza</label>
+                                    <input type="text" th:field="*{raza}" class="form-control"
+                                        th:errorclass="'form-control alert-danger" placeholder="Ingrese raza"
+                                        required>
+                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('raza')}"
+                                        th:errors="*{raza}"></small>
+                                </div>
+                                <div class="col-md-3 position-relative">
+                                    <label class="text-diseño-rc2">Estatura (cm) </label>
+                                    <input type="text" th:field="*{estatura}" class="form-control"
+                                        th:errorclass="'form-control alert-danger" placeholder="50 cm" required>
+                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('estatura')}"
+                                        th:errors="*{estatura}"></small>
+                                </div>
+                                <div class="col-md-3 position-relative">
+                                    <label class="text-diseño-rc2">Peso (kg) </label>
+                                    <input type="text" th:field="*{peso}" class="form-control"
+                                        th:errorclass="'form-control alert-danger" placeholder="12 kg" required>
+                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('peso')}"
+                                        th:errors="*{peso}"></small>
+                                </div>
+                                <div class="col-md-3 position-relative">
+                                    <label class="text-diseño-rc2">Color</label>
+                                    <input type="text" th:field="*{color}" class="form-control"
+                                        th:errorclass="'form-control alert-danger" placeholder="Ingrese color"
+                                        required>
+                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('color')}"
+                                        th:errors="*{color}"></small>
+                                </div>
+                                <div class="col-md-3 position-relative">
+                                    <label for="fecha_Registro" class="form-label text-diseño-rc2">Fecha Registro</label>
+                                    <input type="date" class="form-control" th:field="*{fecha_Registro}" id="fecha_Registro"
+                                        th:errorclass="'form-control alert-danger" required autofocus="autofocus">
+                                    <small class="form-text text-danger"
+                                        th:if="${#fields.hasErrors('fecha_Registro')}"
+                                        th:errors="*{fecha_Registro}"></small>
+                                </div>
+                                <div class="col-md-3 position-relative">
+                                    <label for="validationTooltip05" class="form-label text-diseño-rc2">Nombre Propietario</label>
+                                    <select class="form-select form-select mb-3" th:field="*{propietario}"
+                                        th:errorclass="'form-control alert-danger"
+                                        aria-label=".form-select-lg example">
+                                        <option th:each="propietario : ${listaPropietario}" th:value="${propietario.id}" th:text="${propietario.nombre}"></option>
+                                    </select>
+                                </div>
+                                <div class="col-12 d-grid">
+                                    <button type="submit" id="btn-registrar"
+                                        class="btn btn-fondo-rc text-light">REGISTRAR</a></button>
+                                </div>
+                                <div class="col-12 d-grid">
+                                    <button type="submit" id="btn-registrar"
+                                        class="btn btn-fondo-rc text-light">VOLVER</a></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="layout :: footer"></footer>
+</body>
+
+</html>
