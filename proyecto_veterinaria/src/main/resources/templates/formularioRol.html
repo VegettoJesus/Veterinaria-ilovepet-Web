@@ -23,7 +23,7 @@
                             <form th:action="@{/formularioRol}" method="post" th:object="${rol}"
                                 class="row g-3">
                                 <input type="hidden" th:field="*{id}" th:value="${rol.id}" />
-                                <div class="col-md-4 position-relative start-50 translate-middle">
+                                <div class="col-md-3 position-relative  translate-middle">
                                     <label class="text-diseño-rc2">Nombre</label>
                                     <input th:field="*{nombre}" id="nombre" type="text" class="form-control" 
                                         placeholder="Ingrese Nombre" required autofocus="autofocus">
@@ -32,6 +32,10 @@
                                 <div class="col-12 d-grid">
                                     <button type="submit" id="btn-registrar"
                                         class="btn btn-fondo-rc text-light">REGISTRAR</a></button>
+                                </div>
+                                <div class="col-12 d-grid">
+                                    <a type="submit" id="btn-volverRol" th:href="@{/GestionRol}"
+                                        class="btn btn-fondo-rc text-light">VOLVER</a>
                                 </div>
                             </form>
                         </div>

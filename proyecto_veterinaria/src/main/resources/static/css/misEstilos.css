@@ -271,3 +271,12 @@ footer .huellitas {
     background: #8EA8C9;
     color: #ffffff;
 }
+/*TEXTO DE BOTONES DE DEATLLE PRODUCTO*/
+.text-diseño-prod{
+    font-family: 'letra-mascotas';
+    font-weight:bolder;
+    font-size: 18px;
+    color: #4B607B;
+    -webkit-animation:tracking-in-expand-fwd 2s cubic-bezier(.215,.61,.355,1.000) both;animation:tracking-in-expand-fwd 2s cubic-bezier(.215,.61,.355,1.000) both
+}
+

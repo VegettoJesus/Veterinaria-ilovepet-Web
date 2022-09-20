@@ -168,6 +168,10 @@ public class Producto {
         this.categoria = categoria;
     }
 
+    public void restarStock(Long stock){
+        this.stock -= stock;
+    }
+
     public Producto(Long id, @NotEmpty String codigo, @NotEmpty String nombre, @NotEmpty String descripcion,
             @NotNull float precio, @NotNull Date fecha_Vencimiento, @NotNull Date fecha_Registro,
             @NotEmpty String marca, @NotEmpty String nombre_Proveedor, @NotNull Long ruc_proveedor, @NotNull Long stock,
@@ -203,7 +207,20 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    
+    public Producto(Long id, @NotEmpty String codigo, @NotEmpty String nombre, @NotNull float precio,
+            @NotNull Long stock) {
+        this.id = id;
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
 
+    public Producto(@NotEmpty String codigo, @NotEmpty String nombre, @NotNull float precio, @NotNull Long stock) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
     
 }

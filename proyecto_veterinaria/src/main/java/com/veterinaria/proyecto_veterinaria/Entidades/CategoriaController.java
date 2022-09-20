@@ -25,11 +25,6 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
-    @GetMapping("/menu-producto")
-    public String vistaMenuProducto(){
-        return "menu-producto";
-    }
-
     @GetMapping("/GestionCategoria")
     public String listarCategorias(@RequestParam(name = "page",defaultValue = "0")int page, Model model){
         Pageable pageRequest = PageRequest.of(page,7);

@@ -57,6 +57,7 @@
                                     <th class="text-center text-black estilo-letra-mascota">Marca</th>
                                     <th class="text-center text-black estilo-letra-mascota">Ruc Proveedor</th>
                                     <th class="text-center text-black estilo-letra-mascota">Nombre Proveedor</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Fecha Ingreso</th>
                                     <th class="text-center text-black estilo-letra-mascota">Categoria</th>
                                     <th class="text-center text-black estilo-letra-mascota">Acciones</th>
                                 </tr>
@@ -68,6 +69,7 @@
                                     <td class="text-black estilo-letra-mascota" th:text="${producto.marca}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${producto.ruc_proveedor}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${producto.nombre_Proveedor}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${producto.fecha_Registro}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${producto.categoria.nombre}"></td>
                                     <td>
                                         <a th:href="@{/detalleProducto/} + ${producto.id}" class="btn btn-info me-1 "

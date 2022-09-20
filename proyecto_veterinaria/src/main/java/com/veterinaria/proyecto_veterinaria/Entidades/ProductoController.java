@@ -1,8 +1,10 @@
 package com.veterinaria.proyecto_veterinaria.Entidades;
 
 
+
 import java.util.List;
 import java.util.Map;
+
 
 import javax.validation.Valid;
 
@@ -30,6 +32,20 @@ public class ProductoController {
     @Autowired
     private CategoriaService categoriaService;
 
+    @GetMapping("/menu-producto")
+    public String vistaMenuProducto(){
+        return "menu-producto";
+    }
+    @GetMapping("/catalogoProducto")
+    public String vistaCatalogo(@RequestParam(name = "page",defaultValue = "0")int page, Model model){
+        Pageable pageRequest = PageRequest.of(page,10);
+        Page<Producto> producto = productoService.findAll(pageRequest);
+        PageRender<Producto> pageRender = new PageRender<>("/catalogoProducto",producto);
+        model.addAttribute("producto",producto);
+        model.addAttribute("page",pageRender);
+        return "catalogoProducto";
+    }
+
     @GetMapping("/detalleProducto/{id}")
     public String verDetallesDelProducto(@PathVariable(value = "id") Long id, Map<String, Object> modelo,RedirectAttributes flash){
         Producto producto = productoService.findOne(id);
@@ -40,7 +56,10 @@ public class ProductoController {
         List<Categoria> listaCategoria = categoriaService.findAll();
         modelo.put("listaCategorias",listaCategoria);
         modelo.put("producto", producto);
-        modelo.put("titulo","Detalles del producto " + producto.getNombre());
+        modelo.put("titulo",producto.getMarca()+ " - " + producto.getNombre());
+        modelo.put("stockDispo","Está disponible en stock: "+producto.getStock() + " articulos");
+        modelo.put("vence", "Este producto vence en: "+producto.getFecha_Vencimiento());
+        modelo.put("precio","S/."+producto.getPrecio());
         return "detalleProducto";
     }
 
