@@ -55,7 +55,7 @@
           height="230rem">  
         <div class="card-body">
           <h5 class="card-title text-center text-diseño-mpc" th:text="${producto.nombre}"></h5>
-          <p class="card-text" th:text="${producto.descripcion}"></p>
+          <p class="card-text estilo-letra-mascota" th:text="${producto.descripcion}"></p>
           <a href="#" class="btn btn-verDetalle text-diseño-mpc" th:href="@{/detalleProducto/}+${producto.id}">Ver Detalle</a>
         </div>
       </div>

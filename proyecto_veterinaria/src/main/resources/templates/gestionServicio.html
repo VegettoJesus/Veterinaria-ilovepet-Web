@@ -33,45 +33,36 @@
     <main class="d-flex">
         <div th:replace="layout :: SidebarAdmin"></div>
 
-        <!--TABLA DONDE SE VERÁN LOS MASCOTAS DE LA VETERINARIA-->
+        <!--TABLA DONDE SE VERÁN LOS SERVICIO DE LA VETERINARIA-->
 
         <div class="py-4 me-auto  ms-auto">
             <div class="card table-hover">
-                <div class="card-header degradadoFondo ">GESTION DE MASCOTA</div>
+                <div class="card-header degradadoFondo">GESTION DE SERVICIO</div>
                 <div class="card-body table-fondo">
                     <div class="col-12 text-center">
-                        <a th:href="@{/formularioMascota}" class="btn btn-primary me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
-                                src="../imagenes/agregaMascota.png" alt="huella" height="30" width="30">Registrar Mascota</a>
+                        <a th:href="@{/formularioServicio}" class="btn btn-primary me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
+                                src="../imagenes/newServicio.png" alt="newServicio" height="30" width="30">Registrar Servicio</a>
                     </div>
                     <div>
-                        <table class="table table-fondo table-striped">
+                        <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="text-center text-black estilo-letra-mascota">Nombre</th>
-                                    <th class="text-center text-black estilo-letra-mascota">Sexo</th>
-                                    <th class="text-center text-black estilo-letra-mascota">Color</th>
-                                    <th class="text-center text-black estilo-letra-mascota">Especie</th>
-                                    <th class="text-center text-black estilo-letra-mascota">Fecha Registro</th>
-                                    <th class="text-center text-black estilo-letra-mascota">Peso</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Descripcion</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Precio</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Tipo de Mascota</th>
                                     <th class="text-center text-black estilo-letra-mascota">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr th:each="mascota : ${mascota}">
-                                    <td class=" text-black estilo-letra-mascota" th:text="${mascota.nombre}"></td>
-                                    <td class=" text-black estilo-letra-mascota" th:text="${mascota.Sexo}"></td>
-                                    <td class=" text-black estilo-letra-mascota" th:text="${mascota.color}"></td>
-                                    <td class=" text-black estilo-letra-mascota" th:text="${mascota.especie}"></td>
-                                    <td class=" text-black estilo-letra-mascota" th:text="${mascota.fecha_Registro}"></td>
-                                    <td class=" text-black estilo-letra-mascota" th:text="${mascota.peso}+' Kg'"></td>
+                                <tr th:each="servicio : ${servicio}">
+                                    <td class=" text-black estilo-letra-mascota" th:text="${servicio.descripcion}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${servicio.precio}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${servicio.tipo_mascota}"></td>
                                     <td>
-                                        <a th:href="@{/detalleMascota/} + ${mascota.id}" class="btn btn-info me-1 "
-                                            type="submit"><img src="../imagenes/buscar.png" alt="huella" height="30"
-                                                width="30"></a>
-                                        <a th:href="@{/eliminarMascota/} + ${mascota.id}" class="btn btn-danger me-1"
+                                        <a th:href="@{/eliminarServicio/} + ${servicio.id}" class="btn btn-danger me-1"
                                             type="submit"><img src="../imagenes/eliminar.png" alt="huella" height="30"
                                                 width="30"></a>
-                                        <a th:href="@{/formularioMascota/} + ${mascota.id}"
+                                        <a th:href="@{/formularioServicio/} + ${servicio.id}"
                                             class="btn btn-warning me-1" type="submit"><img src="../imagenes/editar.png"
                                                 alt="huella" height="30" width="30"></a>
                                     </td>

@@ -49,7 +49,7 @@ public class RolController {
             modelo.addAttribute("titulo", "Registrar Rol");
             return "formularioRol";
         }
-        String mensaje = (rol.getId() != null) ? "El Rol " + rol.getNombre() + " ha sido editado con exito" : "El categoria "+ rol.getNombre() + " ha sido registrado con exito";
+        String mensaje = (rol.getId() != null) ? "El Rol " + rol.getNombre() + " ha sido editado con exito" : "El Rol "+ rol.getNombre() + " ha sido registrado con exito";
         rolService.save(rol);
         status.setComplete();
         flash.addFlashAttribute("success",mensaje);

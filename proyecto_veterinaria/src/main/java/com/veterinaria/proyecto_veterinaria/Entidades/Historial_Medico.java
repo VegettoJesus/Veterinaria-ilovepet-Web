@@ -32,13 +32,12 @@ public class Historial_Medico {
 
     @NotEmpty
     private String observaciones;
-
-    @NotEmpty
-    private String estado;
     
     @OneToMany
     @JoinColumn(name = "id_Historial_Medico")
     private List<Mascota> mascota;
    
-
+    @OneToMany
+    @JoinColumn(name = "id_Historial_Medico")
+    private List<Citas> citas;
 }
