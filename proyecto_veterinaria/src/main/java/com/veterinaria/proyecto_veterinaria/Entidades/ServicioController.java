@@ -33,7 +33,7 @@ public class ServicioController {
 
     @GetMapping("/catalogoServicios")
     public String vistaCatalogo(@RequestParam(name = "page",defaultValue = "0")int page, Model model){
-        Pageable pageRequest = PageRequest.of(page,7);
+        Pageable pageRequest = PageRequest.of(page,10);
         Page<Servicio> servicio = servicioService.findAll(pageRequest);
         PageRender<Servicio> pageRender = new PageRender<>("/gestionServicio",servicio);
         model.addAttribute("servicio",servicio);
