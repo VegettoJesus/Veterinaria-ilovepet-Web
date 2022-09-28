@@ -164,4 +164,9 @@ public class Citas {
     public Citas() {
     }
 
+    @Override
+    public String toString() {
+        return "" + servicio + "";
+    }
+
 }

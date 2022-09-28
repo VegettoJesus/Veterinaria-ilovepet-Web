@@ -83,4 +83,12 @@ public class Servicio {
     public Servicio() {
     }
 
+
+    @Override
+    public String toString() {
+        return descripcion;
+    }
+
+    
+
 }

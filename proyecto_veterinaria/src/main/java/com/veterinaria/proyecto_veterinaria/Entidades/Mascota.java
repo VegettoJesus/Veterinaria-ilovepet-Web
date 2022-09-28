@@ -179,6 +179,11 @@ public class Mascota {
     public Mascota() {
     }
 
+    @Override
+    public String toString() {
+        return nombre;
+    }
+
     
 
 }
