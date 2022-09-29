@@ -33,6 +33,11 @@ public class EmpleadoController {
     @Autowired
     private RolService rolservice;
 
+    @GetMapping("/login")
+    public String IniciarSesion(){
+        return "login";
+    }
+
     @GetMapping("/detalleEmpleado/{id}")
     public String verDetallesDelEmpleado(@PathVariable(value = "id") Long id, Map<String, Object> modelo,RedirectAttributes flash){
         Empleado_Login empleado = empleado_Service.findOne(id);

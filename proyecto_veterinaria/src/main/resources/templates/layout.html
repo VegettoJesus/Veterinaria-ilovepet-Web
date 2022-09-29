@@ -78,11 +78,11 @@
                 id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="../imagenes/interfaz-de-usuario-de-administrador.png" alt="admin-icon" width="32" height="32"
                     class="rounded-circle me-2">
-                <strong>Administrador</strong>
+                <h1><span spec:authentication="principal.username"></span></h1>
             </a>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                <li><a class="dropdown-item" href="../login.html">Cerrar Sesión</a></li>
-            </ul>
+            <a class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                <li sec:autorize="isAuthenticated()"><a class="dropdown-item" th:href="@{/logout}">Cerrar Sesión</a></li>
+            </a>
         </div>
     </div>
 

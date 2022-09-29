@@ -24,45 +24,29 @@
                                 <h3 class="text-diseño ">INICIAR SESIÓN</h3>
                             </div>
                             <hr class="border border-light" />
-                            <div th:action="@{/login}" method="post" class="form-body">
-                                <form class="row g-4">
-                                    <div class="col-12 text-center">
-                                        <label class="form-label text-diseño2">Usuario</label>
-                                        <input type="text" class="form-control" id="usuario"
-                                            placeholder="Ingresa tu usuario">
+                            <div  class="form-body">
+                                <form th:action="@{/login}" method="post" class="row g-4">
+                                    <div th:if=${param.error}>
+                                        <div class="alert alert-danger">Usuario o contraseña inválidos</div>
+                                    </div>
+                                    <div th:if=${param.logout}>
+                                        <div class="alert alert-info">Se ha cerrado sesión correctamente</div>
                                     </div>
                                     <div class="col-12 text-center">
-                                        <label class="form-label text-diseño2">Email</label>
-                                        <input type="email" class="form-control" id="usuario"
-                                            placeholder="Ingresa Correo">
+                                        <label class="form-label text-diseño2">Correo Electronico</label>
+                                        <input type="email" class="form-control" id="username" name="username"
+                                            required autofocus="autofocus" placeholder="Ingresa tu usuario">
                                     </div>
-                                    <div class="col-12 text-center">
+                                    <div  class="col-12 text-center">
                                         <label class="form-label text-diseño2">Contraseña</label>
                                         <div class="input-group" id="show_hide_password">
-                                            <input type="password" class="form-control border-end-0 btn-clave"
-                                                id="clave" placeholder="Ingresa tu contraseña">
+                                            <input type="password" class="form-control border-end-0 btn-clave" name="password"
+                                                id="password" required autofocus="autofocus" placeholder="Ingresa tu contraseña">
                                         </div>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <label class="form-label text-diseño2">Rol</label>
-                                        <select class="form-select" aria-label="Seleccione">
-                                            <option selected>--Seleccione--</option>
-                                            <option value="Administrador">Administrador</option>
-                                            <option value="Médico">Médico</option>
-                                            <option value="Cajero">Cajero</option>
-                                        </select>
                                     </div>
 
                                     <div class="col-12 d-grid">
-                                        <button type="button" id="login" class="btn btn-fondo"><a
-                                                class="text-light nav-link active"
-                                                href="./pages/menu-administrador.html">ENTRAR</a></button>
-                                        <br>
-                                        <p class="text-center text-light estilo-letra-mascota">¿Olvidaste tu contraseña?
-                                            <a href="./pages/restablecer-aqui.html">Restablecer aquí</a></p>
-                                        <br>
-                                        <p class="text-center text-light estilo-letra-mascota">¿No tienes cuenta? <a
-                                                href="./pages/Regitro.html">Create cuenta aquí</a></p>
+                                        <input type="submit" class="btn btn-fondo" id="login-submit"  value="Iniciar sesión"/>
                                     </div>
                                 </form>
                             </div>

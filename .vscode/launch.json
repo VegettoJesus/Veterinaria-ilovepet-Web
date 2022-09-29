@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch passwordGenerator",
+            "request": "launch",
+            "mainClass": "com.veterinaria.proyecto_veterinaria.Entidad_usuario.passwordGenerator",
+            "projectName": "proyecto_veterinaria"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ProyectoVeterinariaApplication<proyecto_veterinaria>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
