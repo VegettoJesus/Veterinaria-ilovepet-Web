@@ -81,7 +81,7 @@
                 <h1><span spec:authentication="principal.username"></span></h1>
             </a>
             <a class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                <li sec:autorize="isAuthenticated()"><a class="dropdown-item" th:href="@{/logout}">Cerrar Sesión</a></li>
+                <li sec:autorize="isAuthenticated()"><a class="dropdown-item" id="logout" th:href="@{/logout}">Cerrar Sesión</a></li>
             </a>
         </div>
     </div>

@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="col-md-4 position-relative">
                                     <label class="form-label text-diseño-rc2">Contraseña</label>
-                                    <input  type="password" th:field="*{password}" class="form-control"
+                                    <input id="password" type="password" th:field="*{password}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="Contraseña" required
                                         autofocus="autofocus">
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('password')}"
@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="col-md-4 position-relative">
                                     <label class="form-label text-diseño-rc2">Rol</label>
-                                    <select class="form-select" th:field="*{tipo_rol}"
+                                    <select id="rol" class="form-select" th:field="*{tipo_rol}"
                                         th:errorclass="'form-control alert-danger">
                                         <option th:each="rol : ${rol}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
                                     </select>
