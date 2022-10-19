@@ -203,6 +203,21 @@ public class Empleado_Login implements Serializable {
 
     
 
+    public Empleado_Login(@NotNull Long dni, @NotEmpty String nombre, @NotEmpty String apellido,
+            @NotNull Date fecha_Nacimiento, @NotNull Integer celular, @Email String email, @NotEmpty String direccion,
+            @NotEmpty String usuario, @NotEmpty String password, @NotEmpty String sexo) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fecha_Nacimiento = fecha_Nacimiento;
+        this.celular = celular;
+        this.email = email;
+        this.direccion = direccion;
+        this.usuario = usuario;
+        this.password = password;
+        this.sexo = sexo;
+    }
+
     public Empleado_Login(@NotEmpty String password) {
         this.password = password;
     }
@@ -216,6 +231,11 @@ public class Empleado_Login implements Serializable {
     }
 
     public Empleado_Login() {
+    }
+
+    @Override
+    public String toString() {
+        return nombre + apellido;
     }
 
     

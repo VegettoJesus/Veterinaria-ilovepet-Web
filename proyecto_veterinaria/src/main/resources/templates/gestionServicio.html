@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 </head>
 
-<body class="bg-detalle-usuario">
+<body class="bg-detalle-usuario" onload="modal()">
     <div class="container">
         <div th:if="${success != null}" class="alert alert-primary alert-dismissible fade show">
             [[${success}]]>
@@ -59,7 +59,7 @@
                                     <td class=" text-black estilo-letra-mascota" th:text="${servicio.precio}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${servicio.tipo_mascota}"></td>
                                     <td>
-                                        <a th:href="@{/eliminarServicio/} + ${servicio.id}" class="btn btn-danger me-1"
+                                        <a onclick="return Eliminar(this)"  th:href="@{/eliminarServicio/} + ${servicio.id}" class="btn btn-danger me-1"
                                             type="submit"><img src="../imagenes/eliminar.png" alt="huella" height="30"
                                                 width="30"></a>
                                         <a th:href="@{/formularioServicio/} + ${servicio.id}"

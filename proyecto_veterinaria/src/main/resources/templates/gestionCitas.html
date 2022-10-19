@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 </head>
 
-<body class="bg-detalle-usuario">
+<body class="bg-detalle-usuario" onload="modal()">
     <div class="container">
         <div th:if="${success != null}" class="alert alert-primary alert-dismissible fade show">
             [[${success}]]>
@@ -67,7 +67,7 @@
                                     <td class=" text-black estilo-letra-mascota" th:text="${citas.hora_cita_Inicia} +' - ' + ${citas.hora_cita_Finaliza}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${citas.Estado}"></td>
                                     <td>
-                                        <a th:href="@{/eliminarCitas/} + ${citas.id}" class="btn btn-danger me-1"
+                                        <a onclick="return Eliminar(this)" th:href="@{/eliminarCitas/} + ${citas.id}" class="btn btn-danger me-1"
                                             type="submit"><img src="../imagenes/eliminar.png" alt="huella" height="30"
                                                 width="30"></a>
                                         <a th:href="@{/formularioCitas/} + ${citas.id}"
