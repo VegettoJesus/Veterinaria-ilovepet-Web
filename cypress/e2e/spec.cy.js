@@ -63,19 +63,19 @@ describe('Mantener Empleado', () => {
       cy.get('#direccion').type('Av. Los Jardines 123')
       cy.get('#email').type('adriana17@gmail.com')
       cy.get('#celular').type('987654321')
-      cy.get('#sexo').select('F')
+      cy.get('#sexo').select('M')
       cy.get('#fecha_Nacimiento').type('2002-04-12')
       cy.get('#usuario').type('Adri17')
       cy.get('#password').type('123')
       //cy.get('select').find('Cajero')
       cy.get('#btn-registrar').click()
-      cy.location('pathname').should('eq','/gestionAdmin')  
+      //cy.location('pathname').should('eq','/gestionAdmin')  
     })
-/*
+
     it('Editar Empleado', () => {
       
       cy.visit(Cypress.env('base_url'))
-      cy.get('#btnRegEmpleado').click()
+      cy.get('#btnEditar').click()
       cy.location('pathname').should('eq','/formularioEmpleado')
       cy.get('#dni').type('73189018')
       cy.get('#nombre').type('Adriana')
@@ -89,8 +89,78 @@ describe('Mantener Empleado', () => {
       cy.get('#password').type('123')
       //cy.get('select').find('Cajero')
       cy.get('#btn-registrar').click()
-      cy.location('pathname').should('eq','/gestionAdmin')  
+      //cy.location('pathname').should('eq','/gestionAdmin')  
     })
-    */
+
+    it('Ver Empleado', () => {
+      
+      cy.visit(Cypress.env('base_url'))
+      cy.get('#btn-ver').click()
+      cy.location('pathname').should('eq','/detalleEmpleado/1')
+      //cy.get('select').find('Cajero')
+      cy.get('#btn-registrar').click()
+      cy.location('pathname').should('eq','/gestionAdmin')  
+    }) 
+    
   })
-  
+
+  describe('Mantener Propietario', () => {
+    it('Registrar Propietario', () => {
+      cy.visit(Cypress.env('base_url'))
+      cy.get('#agProp').click()
+      cy.location('pathname').should('eq','/gestionPropietario')
+      cy.get('#btnRegPropietario').click()
+      cy.location('pathname').should('eq','/formularioPropietario')
+      cy.get('#nomPropietario').type('Rodrigo Jorge Alonso Gomez Velasquez')
+      cy.get('#direccion').type('Av Villamaria del Triunfo')
+      cy.get('#correo').type('rodrigoval@gmail.com')
+      cy.get('#celPropietario').type('954254114')
+      //cy.get('select').find('Cajero')
+      cy.get('#btn-Propietario').click()
+      //cy.location('pathname').should('eq','/gestionAdmin')  
+          
+    })
+
+    it('Editar Propietario', () => {
+      cy.visit(Cypress.env('base_url'))
+      cy.get('#agProp').click()
+      cy.location('pathname').should('eq','/gestionPropietario')
+      cy.get('#btnRegPropietario').click()
+      cy.location('pathname').should('eq','/formularioPropietario')
+      cy.get('#nomPropietario').type('Rodrigo Jorge Alonso Gomez Velasquez')
+      cy.get('#direccion').type('Av Villamaria del Triunfo')
+      cy.get('#correo').type('rodrigoval@gmail.com')
+      cy.get('#celPropietario').type('954254114')
+      //cy.get('select').find('Cajero')
+      cy.get('#btn-Propietario').click()
+      //cy.location('pathname').should('eq','/gestionAdmin')  
+          
+    })
+    
+  })
+
+  describe('Mantener Mascota', () => {
+    it('Registrar Mascota', () => {
+      cy.visit(Cypress.env('base_url'))
+      cy.get('#agMasc').click()
+      cy.location('pathname').should('eq','/gestionMascota')
+      cy.get('#btnRegMascota').click()
+      cy.location('pathname').should('eq','/formularioMascota')
+      cy.get('#nombre').type('Firulais')
+      cy.get('#edad').type('9')
+      cy.get('#Sexo').select('M')
+      cy.get('#especie').select('Perro')
+      cy.get('#raza').type('Pitbull')
+      cy.get('#estatura').clear()
+      cy.get('#estatura').type('50')
+      cy.get('#peso').clear()
+      cy.get('#peso').type('35')
+      cy.get('#color').type('negro')
+      cy.get('#fecha_Registro').type('2022-10-03')
+      //cy.get('#propietario').select()
+      cy.get('#btn-registrar').click()
+      cy.location('pathname').should('eq','/gestionMascota')  
+          
+    })
+    
+  })
