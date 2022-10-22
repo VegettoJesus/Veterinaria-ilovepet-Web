@@ -33,7 +33,7 @@ public class EmpleadoController {
     @Autowired
     private RolService rolservice;
 
-    @GetMapping("/login")
+    @GetMapping({"/","/login",""})
     public String IniciarSesion(){
         return "login";
     }
@@ -52,7 +52,7 @@ public class EmpleadoController {
         return "detalleEmpleado";
     }
 
-    @GetMapping({"/","/gestionAdmin",""})
+    @GetMapping("/gestionAdmin")
     public String listarEmpleados(@RequestParam(name = "page",defaultValue = "0")int page, Model model){
         Pageable pageRequest = PageRequest.of(page,7);
         Page<Empleado_Login> empleados = empleado_Service.findAll(pageRequest);
