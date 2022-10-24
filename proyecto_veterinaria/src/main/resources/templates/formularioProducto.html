@@ -29,14 +29,14 @@
                                 </div>
                                 <div class="col-md-6 position-relative">
                                     <label class="text-diseño-rc2">Nombre</label>
-                                    <input type="text" th:field="*{nombre}" class="form-control"
+                                    <input id="nombre" type="text" th:field="*{nombre}" class="form-control"
                                         placeholder="Ingrese nombre producto" required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}"
                                         th:errors="*{nombre}"></small>
                                 </div>
                                 <div class="col-md-6 position-relative">
                                     <label class="text-diseño-rc2">Descripción</label>
-                                    <input type="text" th:field="*{descripcion}" class="form-control"
+                                    <input id="descripcion" type="text" th:field="*{descripcion}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="Ingrese Descripción"
                                         required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('descripcion')}"
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="col-md-4 position-relative">
                                     <label class="text-diseño-rc2">RUC</label>
-                                    <input type="number" th:field="*{ruc_proveedor}" class="form-control"
+                                    <input id="ruc" type="number" th:field="*{ruc_proveedor}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="2000000000" required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('ruc_proveedor')}"
                                         th:errors="*{ruc_proveedor}"></small>
@@ -69,7 +69,7 @@
 
                                 <div class="col-md-4 position-relative">
                                     <label class="text-diseño-rc2">Precio S/</label>
-                                    <input type="text" th:field="*{precio}" class="form-control"
+                                    <input id="precio" type="text" th:field="*{precio}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="S/0.00" required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('precio')}"
                                         th:errors="*{precio}"></small>
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="col-md-5 position-relative">
                                     <label for="stock" class="form-label text-diseño-rc2">Stock</label>
-                                    <input type="number" th:field="*{stock}" class="form-control"
+                                    <input id="stock" type="number" th:field="*{stock}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="Ingrese Stock"
                                         required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('stock')}"
