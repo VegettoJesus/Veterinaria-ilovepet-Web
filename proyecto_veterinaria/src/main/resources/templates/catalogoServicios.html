@@ -45,7 +45,7 @@
   <!--MENU PRODUCTOS-->
   <div>
     <div class="d-flex">
-      <a th:href="@{/menu-servicio}" class=" p-4 col-md-2" type="submit"><img src="../imagenes/regresar.png"
+      <a id="btnRegresar" th:href="@{/menu-servicio}" class=" p-4 col-md-2" type="submit"><img src="../imagenes/regresar.png"
           alt="regresar" height="100" width="100"></a>
       <div class="bg-menuProd rounded-pill p-3 my-5 col-md-8" height="100" width="100">
         <h1 class="text-center text-diseño-mp">Bienvenido al Catálogo de Servicios</h1>
@@ -76,7 +76,7 @@
             <h5 class="card-title text-center text-diseño-mpc" th:text="${servicio.descripcion}"></h5>
             <h3 class="card-text text-center text-diseño-precio" th:text="'S/.' + ${servicio.precio}"></h3>
             <div class="justify-content-center text-center align-items-center">
-              <a href="#" class="btn btn-fondo-rc text-light text-diseño-mpc"><img src="../imagenes/boton-agregar.png"
+              <a id="btnAgregar" href="#" class="btn btn-fondo-rc text-light text-diseño-mpc"><img src="../imagenes/boton-agregar.png"
                   alt="agregar" height="45px" width="45px">Agregar</a>
             </div>
           </div>

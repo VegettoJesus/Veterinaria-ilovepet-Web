@@ -66,13 +66,13 @@
                                     <td class="text-black estilo-letra-mascota" th:text="${empleado.usuario}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${empleado.email}"></td>
                                     <td>
-                                        <a th:href="@{/detalleEmpleado/} + ${empleado.id}" class="btn btn-info me-1 "
+                                        <a id="btn-ver" th:href="@{/detalleEmpleado/} + ${empleado.id}" class="btn btn-info me-1 "
                                             type="submit"><img src="../imagenes/buscar.png" alt="huella" height="30"
                                                 width="30"></a>
-                                        <a onclick="return Eliminar(this)" th:href="@{/eliminar/} + ${empleado.id}" class="btn btn-danger me-1"
+                                        <a onclick="return Eliminar(this)" id="btn-eliminar-empleado" th:href="@{/eliminar/} + ${empleado.id}" class="btn btn-danger me-1"
                                             type="submit"><img src="../imagenes/eliminar.png" alt="huella" height="30"
                                                 width="30"></a>
-                                        <a th:href="@{/formularioEmpleado/} + ${empleado.id}"
+                                        <a id="btnEditar" th:href="@{/formularioEmpleado/} + ${empleado.id}"
                                             class="btn btn-warning me-1" type="submit"><img src="../imagenes/editar.png"
                                                 alt="huella" height="30" width="30"></a>
                                     </td>

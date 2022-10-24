@@ -26,7 +26,7 @@
                                 <input type="hidden" th:field="*{id}" th:value="${propietario.id}" />
                                 <div class="col-md-12 position-relative">
                                     <label class="text-diseño-rc2">Nombre Completo</label>
-                                    <input type="text" th:field="*{nombre}" class="form-control"
+                                    <input id="nomPropietario" type="text" th:field="*{nombre}" class="form-control"
                                         th:errorclass="'form-control alert-danger"
                                         placeholder="Ingrese nombre completo" required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}"
@@ -51,7 +51,7 @@
 
                                 <div class="col-md-6 position-relative">
                                     <label class="text-diseño-rc2">Celular</label>
-                                    <input type="number" th:field="*{celular}" class="form-control"
+                                    <input id="celPropietario" type="number" th:field="*{celular}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="Ingresar numero"
                                         required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('celular')}"

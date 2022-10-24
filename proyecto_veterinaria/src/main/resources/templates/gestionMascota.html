@@ -40,7 +40,7 @@
                 <div class="card-header degradadoFondo ">GESTION DE MASCOTA</div>
                 <div class="card-body table-fondo">
                     <div class="col-12 text-center">
-                        <a th:href="@{/formularioMascota}" class="btn btn-primary me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
+                        <a id="btnRegMascota" th:href="@{/formularioMascota}" class="btn btn-primary me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
                                 src="../imagenes/agregaMascota.png" alt="huella" height="30" width="30">Registrar Mascota</a>
                     </div>
                     <div>
@@ -65,13 +65,13 @@
                                     <td class=" text-black estilo-letra-mascota" th:text="${mascota.fecha_Registro}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${mascota.peso}+' Kg'"></td>
                                     <td>
-                                        <a th:href="@{/detalleMascota/} + ${mascota.id}" class="btn btn-info me-1 "
+                                        <a id="btn-ver" th:href="@{/detalleMascota/} + ${mascota.id}" class="btn btn-info me-1 "
                                             type="submit"><img src="../imagenes/buscar.png" alt="huella" height="30"
                                                 width="30"></a>
-                                        <a onclick="return Eliminar(this)" th:href="@{/eliminarMascota/} + ${mascota.id}" class="btn btn-danger me-1"
+                                        <a onclick="return Eliminar(this)" id="btn-eliminar-mascota" th:href="@{/eliminarMascota/} + ${mascota.id}" class="btn btn-danger me-1"
                                             type="submit"><img src="../imagenes/eliminar.png" alt="huella" height="30"
                                                 width="30"></a>
-                                        <a th:href="@{/formularioMascota/} + ${mascota.id}"
+                                        <a id="editMascota" th:href="@{/formularioMascota/} + ${mascota.id}"
                                             class="btn btn-warning me-1" type="submit"><img src="../imagenes/editar.png"
                                                 alt="huella" height="30" width="30"></a>
                                     </td>

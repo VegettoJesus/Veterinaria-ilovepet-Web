@@ -25,7 +25,7 @@
                                 <input type="hidden" th:field="*{id}" th:value="${mascota.id}" />
                                 <div class="col-md-5 position-relative">
                                     <label class="text-diseño-rc2">Nombre</label>
-                                    <input type="text" th:field="*{nombre}" class="form-control"
+                                    <input id="nombre" type="text" th:field="*{nombre}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="Ingrese nombre de la mascota"
                                         required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}"
@@ -33,14 +33,14 @@
                                 </div>
                                 <div class="col-md-3 position-relative">
                                     <label class="text-diseño-rc2">Edad (meses) </label>
-                                    <input type="number" th:field="*{edad}" class="form-control"
+                                    <input id="edad" type="number" th:field="*{edad}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="Ingresar numero de meses" required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('edad')}"
                                         th:errors="*{edad}"></small>
                                 </div>
                                 <div class="col-md-4 position-relative">
                                     <label for="validationTooltip05" class="form-label text-diseño-rc2">Sexo</label>
-                                    <select class="form-select form-select mb-3" th:field="*{Sexo}"
+                                    <select id="Sexo" class="form-select form-select mb-3" th:field="*{Sexo}"
                                         th:errorclass="'form-control alert-danger"
                                         aria-label=".form-select-lg example">
                                         <option value="H">Hembra</option>
@@ -52,7 +52,7 @@
                                 <div class="col-md-3 position-relative">
                                     <label for="validationTooltip05"
                                         class="form-label text-diseño-rc2">Especie</label>
-                                    <select class="form-select form-select mb-3" th:field="*{especie}"
+                                    <select id="especie" class="form-select form-select mb-3" th:field="*{especie}"
                                         th:errorclass="'form-control alert-danger"
                                         aria-label=".form-select-lg example">
                                         <option value="Perro">Perro</option>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="col-md-3 position-relative">
                                     <label class="text-diseño-rc2">Raza</label>
-                                    <input type="text" th:field="*{raza}" class="form-control"
+                                    <input id="raza" type="text" th:field="*{raza}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="Ingrese raza"
                                         required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('raza')}"
@@ -73,21 +73,21 @@
                                 </div>
                                 <div class="col-md-3 position-relative">
                                     <label class="text-diseño-rc2">Estatura (cm) </label>
-                                    <input type="text" th:field="*{estatura}" class="form-control"
+                                    <input id="estatura" type="text" th:field="*{estatura}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="50 cm" required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('estatura')}"
                                         th:errors="*{estatura}"></small>
                                 </div>
                                 <div class="col-md-3 position-relative">
                                     <label class="text-diseño-rc2">Peso (kg) </label>
-                                    <input type="text" th:field="*{peso}" class="form-control"
+                                    <input id="peso" type="text" th:field="*{peso}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="12 kg" required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('peso')}"
                                         th:errors="*{peso}"></small>
                                 </div>
                                 <div class="col-md-3 position-relative">
                                     <label class="text-diseño-rc2">Color</label>
-                                    <input type="text" th:field="*{color}" class="form-control"
+                                    <input id="color" type="text" th:field="*{color}" class="form-control"
                                         th:errorclass="'form-control alert-danger" placeholder="Ingrese color"
                                         required>
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('color')}"
@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="col-md-3 position-relative">
                                     <label for="fecha_Registro" class="form-label text-diseño-rc2">Fecha Registro</label>
-                                    <input type="date" class="form-control" th:field="*{fecha_Registro}" id="fecha_Registro"
+                                    <input  type="date" class="form-control" th:field="*{fecha_Registro}" id="fecha_Registro"
                                         th:errorclass="'form-control alert-danger" required autofocus="autofocus">
                                     <small class="form-text text-danger"
                                         th:if="${#fields.hasErrors('fecha_Registro')}"
@@ -104,8 +104,8 @@
                                 <div class="col-md-3 position-relative">
                                     <label for="validationTooltip05" class="form-label text-diseño-rc2">Nombre Propietario</label>
                                     <select class="form-select form-select mb-3" th:field="*{propietario}"
-                                        th:errorclass="'form-control alert-danger"
-                                        aria-label=".form-select-lg example">
+                                        th:errorclass="form-control alert-danger"
+                                        aria-label="form-select-lg example">
                                         <option th:each="propietario : ${listaPropietario}" th:value="${propietario.id}" th:text="${propietario.nombre}"></option>
                                     </select>
                                 </div>

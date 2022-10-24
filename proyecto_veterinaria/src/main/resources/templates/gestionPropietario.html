@@ -39,7 +39,7 @@
                 <div class="card-header degradadoFondo">GESTION DE PROPIETARIO</div>
                 <div class="card-body table-fondo">
                     <div class="col-12 text-center">
-                        <a th:href="@{/formularioPropietario}" class="btn btn-primary me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
+                        <a id="btnRegPropietario" th:href="@{/formularioPropietario}" class="btn btn-primary me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
                                 src="../imagenes/newPropietario.png" alt="newCategoria" height="30" width="30">Registrar Propietario</a>
                     </div>
                     <div>
@@ -62,10 +62,10 @@
                                     <td class="text-black estilo-letra-mascota" th:text="${propietario.medio_Pago}"></td>
                                     <td class="text-black estilo-letra-mascota" th:text="${propietario.correo}"></td>
                                     <td>
-                                        <a onclick="return Eliminar(this)" th:href="@{/eliminarPropietario/} + ${propietario.id}" class="btn btn-danger me-1"
+                                        <a onclick="return Eliminar(this)" id="btn-eliminar-propietario" th:href="@{/eliminarPropietario/} + ${propietario.id}" class="btn btn-danger me-1"
                                             type="submit"><img src="../imagenes/eliminar.png" alt="huella" height="30"
                                                 width="30"></a>
-                                        <a th:href="@{/formularioPropietario/} + ${propietario.id}"
+                                        <a id="editProp" th:href="@{/formularioPropietario/} + ${propietario.id}"
                                             class="btn btn-warning me-1" type="submit"><img src="../imagenes/editar.png"
                                                 alt="huella" height="30" width="30"></a>
                                     </td>

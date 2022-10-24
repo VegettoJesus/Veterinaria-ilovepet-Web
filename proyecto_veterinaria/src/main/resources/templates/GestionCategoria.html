@@ -41,7 +41,7 @@
                 <div class="card-header degradadoFondo">GESTION DE CATEGORIA</div>
                 <div class="card-body table-fondo">
                     <div class="col-12 text-center">
-                        <a th:href="@{/formularioCategoria}" class="btn btn-primary me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
+                        <a id="registrarCategoria" th:href="@{/formularioCategoria}" class="btn btn-primary me-5 estilo-letra-mascota" type="submit"><img class="pe-1"
                                 src="../imagenes/newCategoria.png" alt="newCategoria" height="30" width="30">Registrar Categoria</a>
                     </div>
                     <div>
@@ -58,10 +58,10 @@
                                     <td class="text-black estilo-letra-mascota" th:text="${categoria.id}"></td>
                                     <td class="text-black estilo-letra-mascota" th:text="${categoria.nombre}"></td>
                                     <td>
-                                        <a onclick="return Eliminar(this)" th:href="@{/eliminarCategoria/} + ${categoria.id}" class="btn btn-danger me-1"
+                                        <a id="btn-eliminar-categoria" onclick="return Eliminar(this)" th:href="@{/eliminarCategoria/} + ${categoria.id}" class="btn btn-danger me-1"
                                             type="submit"><img src="../imagenes/eliminar.png" alt="huella" height="30"
                                                 width="30"></a>
-                                        <a th:href="@{/formularioCategoria/} + ${categoria.id}"
+                                        <a id="btnEditarCategoria" th:href="@{/formularioCategoria/} + ${categoria.id}"
                                             class="btn btn-warning me-1" type="submit"><img src="../imagenes/editar.png"
                                                 alt="huella" height="30" width="30"></a>
                                     </td>

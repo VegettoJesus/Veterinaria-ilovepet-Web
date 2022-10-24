@@ -23,23 +23,23 @@
                                 <input type="hidden" th:field="*{id}" th:value="${servicio.id}" />
                                 <div class="col-md-12 position-relative">
                                     <label class="text-diseño-rc2">Descripción</label>
-                                    <input type="text" th:field="*{descripcion}" class="form-control" placeholder="Ingrese descripción del servicio" required autofocus="autofocus">
+                                    <input id="descripcion" type="text" th:field="*{descripcion}" class="form-control" placeholder="Ingrese descripción del servicio" required autofocus="autofocus">
                                     <div class="invalid-feedback" th:errors="*{descripcion}"></div>
                                 </div>
                                 <div class="col-md-4 position-relative">
                                     <label class="text-diseño-rc2">Precio S/</label>
-                                    <input type="text" th:field="*{precio}" class="form-control" placeholder="S/0.00" required autofocus="autofocus">
+                                    <input id="precio" type="text" th:field="*{precio}" class="form-control" placeholder="S/0.00" required autofocus="autofocus">
                                     <div class="invalid-feedback" th:errors="*{precio}"></div>
                                 </div>
                                 <div class="col-md-6 position-relative">
                                     <label for="validationTooltip05" class="form-label text-diseño-rc2">Tipo de
                                         mascota</label>
                                     <select class="form-select form-select mb-3" th:field="*{tipo_mascota}"
-                                        th:errorclass="'form-control alert-danger" aria-label="form-select-lg example">
-                                        <option selected value="Perro">Perro</option>
-                                        <option selected value="Gato">gato</option>
-                                        <option selected value="Conejo">Conejo</option>
-                                        <option selected value="Hamster">Hamster</option>
+                                        th:errorclass="form-control alert-danger" aria-label="form-select-lg example">
+                                        <option  value="Perro">Perro</option>
+                                        <option  value="Gato">gato</option>
+                                        <option  value="Conejo">Conejo</option>
+                                        <option  value="Hamster">Hamster</option>
                                     </select>
                                 </div>
                                 <div class="col-12 d-grid">
