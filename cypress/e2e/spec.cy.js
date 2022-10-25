@@ -379,5 +379,10 @@ describe('Proyecto veterinaria', () => {
     cy.get('.swal2-confirm').click({force:true})
     cy.get('.swal2-confirm').click({force:true})
   })*/
-  
+  it('Cerrar Sesion Usuario Default', () => {
+    
+    cy.visit("http://localhost:54985/gestionProducto")
+    cy.get('#logout') .click()
+    cy.location('pathname').should('eq','/login')
+  })
 })
