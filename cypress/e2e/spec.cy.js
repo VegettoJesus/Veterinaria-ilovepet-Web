@@ -1,7 +1,7 @@
 describe('Proyecto veterinaria', () => {
   beforeEach("Visitar Login Usuario Default", () => {
     cy.session("Login", () => {
-      cy.visit("http://localhost:54985/login")
+      cy.visit("http://localhost:52477/login")
       cy.get("[name='username']")
         .type("administrador@hotmail.com")
       cy.get("[name='password']")
@@ -10,13 +10,13 @@ describe('Proyecto veterinaria', () => {
     })
   })
   it('Entrar al Gestionar Rol', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#btnRegRol').click({force:true})
     cy.location('pathname').should('eq', '/GestionRol')
   })
   it('Registrar Rol Cajero', () => {
       
-    cy.visit("http://localhost:54985/GestionRol")
+    cy.visit("http://localhost:52477/GestionRol")
     cy.get('#btnRegistrarRoles').click({force:true})
     cy.location('pathname').should('eq','/formularioRol')
     cy.get('#nombre').type('Cajero')
@@ -26,23 +26,17 @@ describe('Proyecto veterinaria', () => {
   })
   it('Modificar Rol Cajero', () => {
       
-    cy.visit("http://localhost:54985/GestionRol")
+    cy.visit("http://localhost:52477/GestionRol")
     cy.get('#btn-editar-rol').click()
     cy.location('pathname').should('contain','/formularioRol/')
     cy.get('#nombre').clear().type('Medico')
     .should('have.value','Medico');
     cy.get('#btn-registrar').click()
     cy.location('pathname').should('eq','/GestionRol')  
-  })/*
-  it('Eliminar Rol Cajero', () => { 
-    cy.visit("http://localhost:54985/GestionRol")
-    cy.get('#btn-eliminar-rol').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-  })*/
+  })
   it('Registrar Empleado', () => {
       
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#btnRegEmpleado').click()
     cy.location('pathname').should('eq','/formularioEmpleado')
     cy.get('#dni').type('73189018')
@@ -61,7 +55,7 @@ describe('Proyecto veterinaria', () => {
     cy.get('#btn-registrar').click()
   })
   it('Editar Empleado', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#btnEditar').click()
     cy.location('pathname').should('eq','/formularioEmpleado/1')
     cy.get('#dni').clear()
@@ -88,20 +82,15 @@ describe('Proyecto veterinaria', () => {
     cy.get('#btn-registrar').click()
   })
   it('Ver Empleado', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#btn-ver').click()
     cy.location('pathname').should('eq','/detalleEmpleado/1')
     cy.get('#btn-regresar').click()
     cy.location('pathname').should('eq','/gestionAdmin')  
   })
-  /*it('Eliminar Empleado', () => { 
-    cy.visit("http://localhost:54671/gestionAdmin")
-    cy.get('#btn-eliminar-empleado').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-  })*/
+  
   it('Registrar Propietario', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#agProp').click()
     cy.location('pathname').should('eq','/gestionPropietario')
     cy.get('#btnRegPropietario').click()
@@ -113,7 +102,7 @@ describe('Proyecto veterinaria', () => {
     cy.get('#btn-Propietario').click()   
   })
   it('Editar Propietario', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#agProp').click()
     cy.location('pathname').should('eq','/gestionPropietario')
     cy.get('#editProp').click()
@@ -129,7 +118,7 @@ describe('Proyecto veterinaria', () => {
     cy.get('#btn-Propietario').click()  
   })
   it('Registrar Mascota', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#agMasc').click()
     cy.location('pathname').should('eq','/gestionMascota')
     cy.get('#btnRegMascota').click()
@@ -153,7 +142,7 @@ describe('Proyecto veterinaria', () => {
     cy.location('pathname').should('eq','/gestionMascota')    
   })
   it('Editar Mascota', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#agMasc').click()
     cy.location('pathname').should('eq','/gestionMascota')
     cy.get('#editMascota').click()
@@ -181,27 +170,15 @@ describe('Proyecto veterinaria', () => {
     cy.location('pathname').should('eq','/gestionMascota')     
   })
   it('Ver Mascota', () => {
-    cy.visit("http://localhost:54985/gestionMascota")
+    cy.visit("http://localhost:52477/gestionMascota")
     cy.get('#btn-ver').click()
     cy.location('pathname').should('eq','/detalleMascota/1')
     cy.get('#btn-regresar').click()
     cy.location('pathname').should('eq','/gestionMascota')  
   })
-  /*
-  it('Eliminar Mascota', () => { 
-    cy.visit("http://localhost:54985/gestionMascota")
-    cy.get('#btn-eliminar-mascota').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-  })*/
-  /*it('Eliminar Propietario', () => { 
-    cy.visit("http://localhost:54985/gestionPropietario")
-    cy.get('#btn-eliminar-propietario').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-  })*/
+  
   it('Registrar Servicio', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#Servicios').click()
     cy.location('pathname').should('eq','/menu-servicio')
     cy.get('#btnGestionarServicio').click()
@@ -216,7 +193,7 @@ describe('Proyecto veterinaria', () => {
     cy.location('pathname').should('eq','/gestionServicio')  
   })
   it('Editar Servicio', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#Servicios').click()
     cy.location('pathname').should('eq','/menu-servicio')
     cy.get('#btnGestionarServicio').click()
@@ -231,21 +208,16 @@ describe('Proyecto veterinaria', () => {
     cy.location('pathname').should('eq','/gestionServicio')  
   })
   it('Ingresar Catalogo Servicio', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#Servicios').click()
     cy.location('pathname').should('eq','/menu-servicio')
     cy.get('#btnCatalogoServicio').click()
     cy.location('pathname').should('eq','/catalogoServicios')
     cy.get('#btnRegresar').click()
   })
-  /*it('Eliminar Servicio', () => { 
-    cy.visit("http://localhost:54985/gestionServicio")
-    cy.get('#btn-eliminar-servicio').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-  })*/
+  
   it('Registrar Cita', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#Citas').click()
     cy.location('pathname').should('eq','/gestionCitas')
     cy.get('#btnRegistrarCita').click()
@@ -265,7 +237,7 @@ describe('Proyecto veterinaria', () => {
     cy.location('pathname').should('eq','/gestionCitas')  
   })
   it('Editar Cita', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#Citas').click()
     cy.location('pathname').should('eq','/gestionCitas')
     cy.get('#btneditarCita').click()
@@ -286,14 +258,9 @@ describe('Proyecto veterinaria', () => {
     cy.get('#btn-registrar').click()
     cy.location('pathname').should('eq','/gestionCitas')  
   })
-  /*it('Eliminar Cita', () => { 
-    cy.visit("http://localhost:54985/gestionServicio")
-    cy.get('#btn-eliminar-cita').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-    cy.get('.swal2-confirm').click({force:true})
-  })*/
+  
   it('Registrar Categoria', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#productos').click()
     cy.location('pathname').should('eq','/menu-producto')
     cy.get('#btnGestionarProducto').click()
@@ -307,7 +274,7 @@ describe('Proyecto veterinaria', () => {
     cy.location('pathname').should('eq','/GestionCategoria')  
   })
   it('Editar Categoria', () => {
-    cy.visit("http://localhost:54985/GestionCategoria")
+    cy.visit("http://localhost:52477/GestionCategoria")
     cy.get('#btnEditarCategoria').click()
     cy.location('pathname').should('eq','/formularioCategoria/1')
     cy.get('#nombre').clear()
@@ -316,7 +283,7 @@ describe('Proyecto veterinaria', () => {
     cy.location('pathname').should('eq','/GestionCategoria')  
   })
   it('Registrar Producto', () => {
-    cy.visit("http://localhost:54985/gestionAdmin")
+    cy.visit("http://localhost:52477/gestionAdmin")
     cy.get('#productos').click()
     cy.location('pathname').should('eq','/menu-producto')
     cy.get('#btnGestionarProducto').click()
@@ -340,7 +307,7 @@ describe('Proyecto veterinaria', () => {
     cy.location('pathname').should('eq','/gestionProducto')  
   })
   it('Editar Producto', () => {
-    cy.visit("http://localhost:54985/gestionProducto")
+    cy.visit("http://localhost:52477/gestionProducto")
     cy.get('#btnEditarProducto').click()
     cy.location('pathname').should('eq','/formularioProducto/1')
     cy.get('#codigo').clear()
@@ -367,21 +334,57 @@ describe('Proyecto veterinaria', () => {
     cy.get('#btn-registrar').click()
     cy.location('pathname').should('eq','/gestionProducto')  
   })
-  /*it('Eliminar Producto', () => { 
-    cy.visit("http://localhost:54985/gestionProducto")
+  it('Eliminar Producto', () => { 
+    cy.visit("http://localhost:52477/gestionProducto")
     cy.get('#btn-eliminar-producto').click({force:true})
     cy.get('.swal2-confirm').click({force:true})
     cy.get('.swal2-confirm').click({force:true})
-  })*/
-  /*it('Eliminar Categoria', () => { 
-    cy.visit("http://localhost:54985/GestionCategoria")
+  })
+  it('Eliminar Categoria', () => { 
+    cy.visit("http://localhost:52477/GestionCategoria")
     cy.get('#btn-eliminar-categoria').click({force:true})
     cy.get('.swal2-confirm').click({force:true})
     cy.get('.swal2-confirm').click({force:true})
-  })*/
+  })
+  it('Eliminar Cita', () => { 
+    cy.visit("http://localhost:52477/gestionCitas")
+    cy.get('#btn-eliminar-cita').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+  })
+  it('Eliminar Servicio', () => { 
+    cy.visit("http://localhost:52477/gestionServicio")
+    cy.get('#btn-eliminar-servicio').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+  })
+  it('Eliminar Mascota', () => { 
+    cy.visit("http://localhost:52477/gestionMascota")
+    cy.get('#btn-eliminar-mascota').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+  })
+  it('Eliminar Propietario', () => { 
+    cy.visit("http://localhost:52477/gestionPropietario")
+    cy.get('#btn-eliminar-propietario').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+  })
+  it('Eliminar Empleado', () => { 
+    cy.visit("http://localhost:52477/gestionAdmin")
+    cy.get('#btn-eliminar-empleado').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+  })
+  it('Eliminar Rol Cajero', () => { 
+    cy.visit("http://localhost:52477/GestionRol")
+    cy.get('#btn-eliminar-rol').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+    cy.get('.swal2-confirm').click({force:true})
+  })
   it('Cerrar Sesion Usuario Default', () => {
     
-    cy.visit("http://localhost:54985/gestionProducto")
+    cy.visit("http://localhost:52477/gestionProducto")
     cy.get('#logout') .click()
     cy.location('pathname').should('eq','/login')
   })
