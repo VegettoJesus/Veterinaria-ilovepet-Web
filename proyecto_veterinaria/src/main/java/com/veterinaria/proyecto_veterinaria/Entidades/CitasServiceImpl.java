@@ -2,6 +2,7 @@ package com.veterinaria.proyecto_veterinaria.Entidades;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -43,7 +44,5 @@ public class CitasServiceImpl implements CitasService{
     @Transactional
     public void delete(Long id) {
         citasRepository.deleteById(id);
-        
     }
-    
 }

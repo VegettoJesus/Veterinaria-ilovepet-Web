@@ -71,6 +71,17 @@
         ["xpath=//div/div/div/div/div/div/div", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "6108d9b0-5da9-4d88-bd44-9d40583bc9ad",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'I Love Pet')]", "xpath:innerText"]
+      ],
+      "value": "I Love Pet"
     }]
   }, {
     "id": "7bc69b8b-61db-4255-b185-a97e95dec98d",
@@ -538,6 +549,16 @@
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "5259e6d6-cba8-4e62-bd07-6e50e164a177",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "El empleado ha sido registrado con exito>"
     }]
   }, {
     "id": "f6ddb167-baaa-41c9-8e5c-f8af756930f5",
@@ -931,6 +952,23 @@
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "5414552a-2795-4fd5-a07d-6bb201248398",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "El empleado ha sido editado con exito>"
+    }, {
+      "id": "f93889ab-9376-4797-827d-e7119cf35f56",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "ae960f3d-5354-47d0-a9ce-356e730d2b57",
@@ -1165,6 +1203,23 @@
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "dd0a0048-211d-41ac-a10a-337fec38c268",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "El propietario Joaquin Mario Salas Fernandez ha sido registrado con exito>"
+    }, {
+      "id": "bbec7c9c-6e03-4e33-9032-dd2550853cdb",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "e05dae36-af5f-41ab-aef8-b2811270bb75",
@@ -1276,21 +1331,7 @@
       ],
       "value": ""
     }, {
-      "id": "2933541d-adf3-469e-8e79-a03480659e29",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=2",
-      "targets": [
-        ["linkText=2", "linkText"],
-        ["css=.page-item:nth-child(4) > .page-link", "css:finder"],
-        ["xpath=//a[contains(text(),'2')]", "xpath:link"],
-        ["xpath=//a[contains(@href, '/gestionPropietario?page=1')]", "xpath:href"],
-        ["xpath=//nav/ul/li[4]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'2')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "f2bb7304-972a-4405-9057-e82a43b699e4",
+      "id": "b1dc710a-17c0-403b-96c8-aec4d23244e6",
       "comment": "",
       "command": "click",
       "target": "css=tr:nth-child(1) #editProp > img",
@@ -1302,33 +1343,60 @@
       ],
       "value": ""
     }, {
-      "id": "7ccc2023-94a2-4e23-b5a5-1b9fac676eb9",
+      "id": "bbb29ef1-60b0-4244-9566-83a1061de9a8",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.row-cols-1",
+      "targets": [
+        ["css=.row-cols-1", "css:finder"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": "184,512"
+    }, {
+      "id": "49e87594-fed6-4826-b860-7a67ea67b4c1",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.row-cols-1",
+      "targets": [
+        ["css=.row-cols-1", "css:finder"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": "184,512"
+    }, {
+      "id": "609e8bd0-6e01-4dea-952b-ab1895eab372",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.row-cols-1",
+      "targets": [
+        ["css=.row-cols-1", "css:finder"],
+        ["xpath=//div/div/div/div", "xpath:position"]
+      ],
+      "value": "184,512"
+    }, {
+      "id": "fe192519-ad0d-4191-8a27-1b92bc7d7aa2",
       "comment": "",
       "command": "click",
-      "target": "id=nomPropietario",
+      "target": "css=.row-cols-1",
       "targets": [
-        ["id=nomPropietario", "id"],
-        ["name=nombre", "name"],
-        ["css=#nomPropietario", "css:finder"],
-        ["xpath=//input[@id='nomPropietario']", "xpath:attributes"],
-        ["xpath=//div/input", "xpath:position"]
+        ["css=.row-cols-1", "css:finder"],
+        ["xpath=//div/div/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "e13c7a96-cd11-4c60-9d7f-5fed408ce369",
+      "id": "e4e00c1f-8fe3-4681-aca5-38e86b0aa3ae",
       "comment": "",
       "command": "type",
-      "target": "id=nomPropietario",
+      "target": "id=celPropietario",
       "targets": [
-        ["id=nomPropietario", "id"],
-        ["name=nombre", "name"],
-        ["css=#nomPropietario", "css:finder"],
-        ["xpath=//input[@id='nomPropietario']", "xpath:attributes"],
-        ["xpath=//div/input", "xpath:position"]
+        ["id=celPropietario", "id"],
+        ["name=celular", "name"],
+        ["css=#celPropietario", "css:finder"],
+        ["xpath=//input[@id='celPropietario']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
       ],
-      "value": "Jorge Arthur Cueva Fernandez"
+      "value": "987654123"
     }, {
-      "id": "6d6d8ba7-85b5-4a27-a2cd-905c028a23e4",
+      "id": "7924c52a-6082-413a-b55c-02e41872301d",
       "comment": "",
       "command": "click",
       "target": "id=btn-Propietario",
@@ -1341,18 +1409,21 @@
       ],
       "value": ""
     }, {
-      "id": "84471ba8-be72-4f88-a021-178d3dda0e03",
+      "id": "f8eb5ac5-46e3-475b-9021-e128719c4f24",
       "comment": "",
-      "command": "click",
-      "target": "linkText=2",
+      "command": "assertText",
+      "target": "css=.alert",
       "targets": [
-        ["linkText=2", "linkText"],
-        ["css=.page-item:nth-child(4) > .page-link", "css:finder"],
-        ["xpath=//a[contains(text(),'2')]", "xpath:link"],
-        ["xpath=//a[contains(@href, '/gestionPropietario?page=1')]", "xpath:href"],
-        ["xpath=//nav/ul/li[4]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'2')]", "xpath:innerText"]
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
       ],
+      "value": "El propietario Alvaro Gongora Renteria ha sido editado con exito>"
+    }, {
+      "id": "b1b5b77f-9da9-4626-9f4a-79b57f548655",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -1451,20 +1522,22 @@
       ],
       "value": ""
     }, {
-      "id": "4f6dd21b-8bcb-4440-ae04-ec8304deda30",
+      "id": "040a6e7b-a08d-402a-9a3c-356ecbb5ef3f",
       "comment": "",
-      "command": "click",
-      "target": "id=btn-regresar",
+      "command": "assertText",
+      "target": "css=.card-title",
       "targets": [
-        ["id=btn-regresar", "id"],
-        ["linkText=Regresar", "linkText"],
-        ["css=#btn-regresar", "css:finder"],
-        ["xpath=//a[contains(text(),'Regresar')]", "xpath:link"],
-        ["xpath=//a[@id='btn-regresar']", "xpath:attributes"],
-        ["xpath=//a[contains(@href, '/gestionAdmin')]", "xpath:href"],
-        ["xpath=//a", "xpath:position"],
-        ["xpath=//a[contains(.,'Regresar')]", "xpath:innerText"]
+        ["css=.card-title", "css:finder"],
+        ["xpath=//h4", "xpath:position"],
+        ["xpath=//h4[contains(.,'Detalles del empleado admin admin')]", "xpath:innerText"]
       ],
+      "value": "Detalles del empleado admin admin"
+    }, {
+      "id": "4115a432-c6b5-485e-9820-d933ba429b18",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -1871,6 +1944,23 @@
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "22302d7d-d12c-4caa-b1c4-8d5dbf71a8aa",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "La mascota ha sido registrado con exito>"
+    }, {
+      "id": "2e8c2e29-540a-4a17-b262-7b696c11d97c",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "c0bc52c7-a62e-4591-9e56-0a43a925a0db",
@@ -2012,6 +2102,23 @@
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "9f5c0560-1054-4331-940e-ac64dc8fbeec",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "El Rol Usuario ha sido registrado con exito>"
+    }, {
+      "id": "47908502-8867-49e1-a3a1-7540a064a18c",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -2189,6 +2296,23 @@
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "c329e694-28c6-4ae7-b955-d83db08b120d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[4]/div", "xpath:position"]
+      ],
+      "value": "El Rol Administrador ha sido editado con exito>"
+    }, {
+      "id": "d1d5a983-b03c-4118-8fe6-7d22f0f48a62",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -2590,6 +2714,23 @@
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "0c554f97-350a-45c3-8b6c-e1e9d0665179",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "La mascota ha sido editado con exito>"
+    }, {
+      "id": "d8e01650-76b9-4ff1-9577-3235e4aa65d1",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "b25bc13a-6d73-4956-9509-324d2778ae94",
@@ -2703,20 +2844,22 @@
       ],
       "value": ""
     }, {
-      "id": "60d24fdc-e261-4de1-acc4-ad7a7f2bbe14",
+      "id": "d52b4107-67fe-4ffb-ba9b-fb7fa7170521",
       "comment": "",
-      "command": "click",
-      "target": "id=btn-regresar",
+      "command": "assertText",
+      "target": "css=.card-title",
       "targets": [
-        ["id=btn-regresar", "id"],
-        ["linkText=Volver", "linkText"],
-        ["css=#btn-regresar", "css:finder"],
-        ["xpath=//a[contains(text(),'Volver')]", "xpath:link"],
-        ["xpath=//a[@id='btn-regresar']", "xpath:attributes"],
-        ["xpath=//a[contains(@href, '/gestionMascota')]", "xpath:href"],
-        ["xpath=//a", "xpath:position"],
-        ["xpath=//a[contains(.,'Volver')]", "xpath:innerText"]
+        ["css=.card-title", "css:finder"],
+        ["xpath=//h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Mini Mini')]", "xpath:innerText"]
       ],
+      "value": "Mini Mini"
+    }, {
+      "id": "d72b7fcd-3376-47d7-8add-272d78df7737",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -2889,6 +3032,23 @@
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "81bb2286-893d-41ec-aa87-bffb1d2fc22f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "El categoria Comida ha sido registrado con exito> "
+    }, {
+      "id": "2375457d-8543-42f8-b1df-d8162a49e236",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -3235,6 +3395,23 @@
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "81a46f8f-da2d-48d9-b362-ac3037ece638",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "El producto ha sido registrado con exito> "
+    }, {
+      "id": "3da936eb-4c99-4ff9-b342-932364d0b810",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "0cc352f4-681c-4158-84b5-5f3f4dd0be65",
@@ -3442,6 +3619,23 @@
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "95319644-1f42-44f1-8ecd-b149e5fb4c96",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "La categoria Higiene ha sido editado con exito>"
+    }, {
+      "id": "c777c362-8b0d-41da-8159-f2902773e2f5",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -3807,6 +4001,23 @@
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "e6089593-429a-44b2-818b-fb918b7cb2d0",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "El producto ha sido editado con exito>"
+    }, {
+      "id": "b1d35e0f-672f-4bae-8d02-8d33edb644b2",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "17a56541-831e-46ca-8801-f6073315d762",
@@ -3935,30 +4146,22 @@
       ],
       "value": ""
     }, {
-      "id": "4c167a10-0111-44f4-9a30-f8369a67f17c",
+      "id": "a8d05c90-c71e-4536-ae09-2bc9e6f071f4",
       "comment": "",
-      "command": "click",
-      "target": "linkText=Volver",
+      "command": "assertText",
+      "target": "css=.text-dise\\F1o-mpc",
       "targets": [
-        ["linkText=Volver", "linkText"],
-        ["css=.col-4:nth-child(2) > #btn-registrar", "css:finder"],
-        ["xpath=//a[contains(text(),'Volver')]", "xpath:link"],
-        ["xpath=//a[@id='btn-registrar']", "xpath:attributes"],
-        ["xpath=//a[contains(@href, '/catalogoProducto')]", "xpath:href"],
-        ["xpath=//a", "xpath:position"],
-        ["xpath=//a[contains(.,'Volver')]", "xpath:innerText"]
+        ["css=.text-dise\\F1o-mpc", "css:finder"],
+        ["xpath=//h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'DogShow - Galleta de perro')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "DogShow - Galleta de perro"
     }, {
-      "id": "744cf5e9-5f46-4ce6-9777-634ed95acfca",
+      "id": "3b5fc32c-92ee-4490-a2e0-c34272139e5a",
       "comment": "",
-      "command": "click",
-      "target": "css=.p-4 > img",
-      "targets": [
-        ["css=.p-4 > img", "css:finder"],
-        ["xpath=//img[@alt='huella']", "xpath:img"],
-        ["xpath=//a/img", "xpath:position"]
-      ],
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -4167,6 +4370,23 @@
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "1be80d6c-36fb-4f71-ae52-5263ad788b3c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "El servicio Baño Desparasitado ha sido registrado con exito> "
+    }, {
+      "id": "26c93bc8-8ab6-430c-95a2-1cd019ee8084",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -4378,6 +4598,23 @@
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "c4782b53-0963-439a-9be2-05f3ce69b80d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "El servicio Baño ha sido editado con exito>"
+    }, {
+      "id": "369844b3-5911-4fcf-8737-e69fd6074c8a",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }, {
@@ -4799,6 +5036,23 @@
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "a80c61f8-6118-4334-b5e2-7e9a784fc42e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "La cita ha sido registrado con exito>"
+    }, {
+      "id": "915d0375-d473-4b16-8fd8-47d3cd7721fd",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "cfd32e0c-47ae-49dd-a9ca-235cc9c21c09",
@@ -5072,6 +5326,23 @@
         ["xpath=//button[contains(.,'REGISTRAR')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "816b2094-dc03-4a16-ad3a-61237f13debe",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "La cita ha sido editado con exito>"
+    }, {
+      "id": "b13e326a-8893-4d2b-91d3-6db8a80628c7",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }, {
     "id": "43f16391-2e0b-4855-be9e-71163fcf894b",
@@ -5171,6 +5442,23 @@
         ["xpath=//a[2]", "xpath:position"],
         ["xpath=//a[contains(.,'Cerrar Sesión')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "e4a301df-d42a-4b19-9644-0162dc7f1ae8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert",
+      "targets": [
+        ["css=.alert", "css:finder"],
+        ["xpath=//form/div/div", "xpath:position"]
+      ],
+      "value": "Se ha cerrado sesión correctamente"
+    }, {
+      "id": "b2cd104a-edde-4aaf-86c5-cc84ff8de20f",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }],

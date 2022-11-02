@@ -1,21 +1,16 @@
 package com.veterinaria.proyecto_veterinaria.Entidades;
 
-import java.util.Date;
-
+import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 @Entity
 @Table(name = "mascota")
 public class Mascota {
@@ -39,10 +34,7 @@ public class Mascota {
     @NotNull
     private float estatura;
 
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(iso = ISO.DATE)
-    @NotNull
-    private Date fecha_Registro;
+    private LocalDateTime fecha_registro = LocalDateTime.now();
 
     @NotEmpty
     private String Sexo;
@@ -105,12 +97,12 @@ public class Mascota {
         this.estatura = estatura;
     }
 
-    public Date getFecha_Registro() {
-        return fecha_Registro;
+    public LocalDateTime getFecha_registro() {
+        return fecha_registro;
     }
 
-    public void setFecha_Registro(Date fecha_Registro) {
-        this.fecha_Registro = fecha_Registro;
+    public void setFecha_registro(LocalDateTime fecha_registro) {
+        this.fecha_registro = fecha_registro;
     }
 
     public String getSexo() {
@@ -145,8 +137,13 @@ public class Mascota {
         this.propietario = propietario;
     }
 
+    @PrePersist
+    public void asignarFechaRegistro(){
+        fecha_registro = LocalDateTime.now();
+    }
+    
     public Mascota(Long id, @NotEmpty String nombre, @NotEmpty String especie, @NotEmpty String raza,
-            @NotNull Integer edad, @NotNull float estatura, @NotNull Date fecha_Registro, @NotEmpty String sexo,
+            @NotNull Integer edad, @NotNull float estatura, LocalDateTime fecha_registro, @NotEmpty String sexo,
             @NotEmpty String color, @NotNull float peso, Propietario propietario) {
         this.id = id;
         this.nombre = nombre;
@@ -154,7 +151,7 @@ public class Mascota {
         this.raza = raza;
         this.edad = edad;
         this.estatura = estatura;
-        this.fecha_Registro = fecha_Registro;
+        this.fecha_registro = fecha_registro;
         Sexo = sexo;
         this.color = color;
         this.peso = peso;
@@ -162,14 +159,14 @@ public class Mascota {
     }
 
     public Mascota(@NotEmpty String nombre, @NotEmpty String especie, @NotEmpty String raza, @NotNull Integer edad,
-            @NotNull float estatura, @NotNull Date fecha_Registro, @NotEmpty String sexo, @NotEmpty String color,
+            @NotNull float estatura, LocalDateTime fecha_registro, @NotEmpty String sexo, @NotEmpty String color,
             @NotNull float peso, Propietario propietario) {
         this.nombre = nombre;
         this.especie = especie;
         this.raza = raza;
         this.edad = edad;
         this.estatura = estatura;
-        this.fecha_Registro = fecha_Registro;
+        this.fecha_registro = fecha_registro;
         Sexo = sexo;
         this.color = color;
         this.peso = peso;

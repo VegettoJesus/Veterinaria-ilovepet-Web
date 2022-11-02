@@ -94,14 +94,6 @@
                                         th:errors="*{color}"></small>
                                 </div>
                                 <div class="col-md-3 position-relative">
-                                    <label for="fecha_Registro" class="form-label text-diseño-rc2">Fecha Registro</label>
-                                    <input  type="date" class="form-control" th:field="*{fecha_Registro}" id="fecha_Registro"
-                                        th:errorclass="'form-control alert-danger" required autofocus="autofocus">
-                                    <small class="form-text text-danger"
-                                        th:if="${#fields.hasErrors('fecha_Registro')}"
-                                        th:errors="*{fecha_Registro}"></small>
-                                </div>
-                                <div class="col-md-3 position-relative">
                                     <label for="validationTooltip05" class="form-label text-diseño-rc2">Nombre Propietario</label>
                                     <select class="form-select form-select mb-3" th:field="*{propietario}"
                                         th:errorclass="form-control alert-danger"

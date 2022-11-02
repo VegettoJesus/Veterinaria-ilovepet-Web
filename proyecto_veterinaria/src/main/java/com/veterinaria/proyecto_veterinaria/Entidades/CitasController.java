@@ -36,6 +36,9 @@ public class CitasController {
     @Autowired
     private ServicioService servicioService;
 
+    @Autowired
+    private PropietarioService propietarioService;
+
     @GetMapping("gestionCitas")
     public String listarCitas(@RequestParam(name = "page",defaultValue = "0")int page, Model model){
         Pageable pageRequest = PageRequest.of(page,7);
@@ -52,6 +55,7 @@ public class CitasController {
         modelo.put("empleado",empleado_Service.findAll());
         modelo.put("mascota",mascotaService.findAll());
         modelo.put("servicio",servicioService.findAll());
+        modelo.put("propietario",propietarioService.findAll());
         modelo.put("citas", citas);
         modelo.put("titulo","Registrar Cita");
         return "formularioCitas";
@@ -86,6 +90,7 @@ public class CitasController {
         modelo.put("empleado",empleado_Service.findAll());
         modelo.put("mascota",mascotaService.findAll());
         modelo.put("servicio",servicioService.findAll());
+        modelo.put("propietario",propietarioService.findAll());
         modelo.put("citas", citas);
         modelo.put("titulo","Modificar Cita");
         return "formularioCitas";

@@ -48,11 +48,13 @@
                             <thead>
                                 <tr>
                                     <th class="text-center text-black estilo-letra-mascota">Encargado</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Propietario</th>
                                     <th class="text-center text-black estilo-letra-mascota">Mascota</th>
                                     <th class="text-center text-black estilo-letra-mascota">Servicio</th>
                                     <th class="text-center text-black estilo-letra-mascota">Fecha Registro</th>
                                     <th class="text-center text-black estilo-letra-mascota">Fecha Cita</th>
                                     <th class="text-center text-black estilo-letra-mascota">Hora Cita</th>
+                                    <th class="text-center text-black estilo-letra-mascota">Observaciones</th>
                                     <th class="text-center text-black estilo-letra-mascota">Estado</th>
                                     <th class="text-center text-black estilo-letra-mascota">Acciones</th>
                                 </tr>
@@ -60,11 +62,13 @@
                             <tbody>
                                 <tr th:each="citas : ${citas}">
                                     <td class=" text-black estilo-letra-mascota" th:text="${citas.empleado.nombre}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${citas.propietario.nombre}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${citas.mascota.nombre}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${citas.servicio.descripcion}"></td>
-                                    <td class=" text-black estilo-letra-mascota" th:text="${citas.fecha_registro}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${#temporals.format(citas.fecha_registro,'dd/MM/YYYY hh:mm a')}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${citas.fecha_cita}"></td>
-                                    <td class=" text-black estilo-letra-mascota" th:text="${citas.hora_cita_Inicia} +' - ' + ${citas.hora_cita_Finaliza}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${citas.hora_cita}"></td>
+                                    <td class=" text-black estilo-letra-mascota" th:text="${citas.Observaciones}"></td>
                                     <td class=" text-black estilo-letra-mascota" th:text="${citas.Estado}"></td>
                                     <td>
                                         <a onclick="return Eliminar(this)" id="btn-eliminar-cita" th:href="@{/eliminarCitas/} + ${citas.id}" class="btn btn-danger me-1"

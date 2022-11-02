@@ -22,36 +22,75 @@
                             <form th:action="@{/formularioCitas}" method="post" th:object="${citas}"
                                 class="row g-3">
                                 <input type="hidden" th:field="*{id}" th:value="${citas.id}" />
-                                <div class="col-md-4 position-relative">
+                                <div th:if="${citas.id == null}"  class="col-md-4 position-relative">
                                     <label for="validationTooltip01"
                                         class="form-label text-diseño-rc2">Encargado</label>
                                     <select class="form-select form-select mb-3" th:field="*{empleado}"
                                         th:errorclass="'form-control alert-danger" aria-label=".form-select-lg example">
+                                        <option value="" selected="selected" >-Seleccionar Encargado-</option>
                                         <option th:each="empleado : ${empleado}" th:value="${empleado.id}" th:text="${empleado.nombre}"></option>
                                     </select>
                                 </div>
-                                <div class="col-md-4 position-relative">
+                                <div th:if="${citas.id != null}"  class="col-md-4 position-relative">
+                                    <label for="validationTooltip01"
+                                        class="form-label text-diseño-rc2">Encargado</label>
+                                    <select class="form-select form-select mb-3" th:field="*{empleado}"
+                                        th:errorclass="'form-control alert-danger" aria-label=".form-select-lg example" disabled>
+                                        <option value="" selected="selected" >-Seleccionar Encargado-</option>
+                                        <option th:each="empleado : ${empleado}" th:value="${empleado.id}" th:text="${empleado.nombre}"></option>
+                                    </select>
+                                </div>
+                                <div th:if="${citas.id == null}" class="col-md-4 position-relative">
+                                    <label for="validationTooltip01"
+                                        class="form-label text-diseño-rc2">Propietario</label>
+                                    <select class="form-select form-select mb-3" th:field="*{propietario}"
+                                        th:errorclass="'form-control alert-danger" aria-label=".form-select-lg example">
+                                        <option value="" selected="selected" >-Seleccionar Propietario-</option>
+                                        <option th:each="propietario : ${propietario}" th:value="${propietario.id}" th:text="${propietario.nombre}"></option>
+                                    </select>
+                                </div>
+                                <div th:if="${citas.id != null}" class="col-md-4 position-relative">
+                                    <label for="validationTooltip01"
+                                        class="form-label text-diseño-rc2">Propietario</label>
+                                    <select class="form-select form-select mb-3" th:field="*{propietario}"
+                                        th:errorclass="'form-control alert-danger" aria-label=".form-select-lg example" disabled>
+                                        <option value="" selected="selected" >-Seleccionar Propietario-</option>
+                                        <option th:each="propietario : ${propietario}" th:value="${propietario.id}" th:text="${propietario.nombre}"></option>
+                                    </select>
+                                </div>
+                                <div th:if="${citas.id == null}" class="col-md-4 position-relative">
                                     <label for="validationTooltip02" class="form-label text-diseño-rc2">Mascota</label>
                                     <select class="form-select form-select mb-3" th:field="*{mascota}"
                                         th:errorclass="'form-control alert-danger" aria-label=".form-select-lg example">
+                                        <option value="" selected="selected" >-Seleccionar Mascota-</option>
                                         <option th:each="mascota : ${mascota}" th:value="${mascota.id}" th:text="${mascota.nombre}"></option>
                                     </select>
                                 </div>
-                                <div class="col-md-4 position-relative">
+                                <div th:if="${citas.id != null}" class="col-md-4 position-relative">
+                                    <label for="validationTooltip02" class="form-label text-diseño-rc2">Mascota</label>
+                                    <select class="form-select form-select mb-3" th:field="*{mascota}"
+                                        th:errorclass="'form-control alert-danger" aria-label=".form-select-lg example" disabled>
+                                        <option value="" selected="selected" >-Seleccionar Mascota-</option>
+                                        <option th:each="mascota : ${mascota}" th:value="${mascota.id}" th:text="${mascota.nombre}"></option>
+                                    </select>
+                                </div>
+                                <div th:if="${citas.id == null}" class="col-md-4 position-relative">
                                     <label for="validationTooltip03" class="form-label text-diseño-rc2">Servicio</label>
                                     <select class="form-select form-select mb-3" th:field="*{servicio}"
                                         th:errorclass="'form-control alert-danger" aria-label=".form-select-lg example">
+                                        <option value="" selected="selected" >-Seleccionar Servicio-</option>
                                         <option th:each="servicio : ${servicio}" th:value="${servicio.id}" th:text="${servicio.descripcion}"></option>
                                     </select>
                                 </div>
-
-                                <div class="col-md-6 position-relative">
-                                    <label for="exampleFormControlInput2" class="form-label text-diseño-rc2">Fecha de
-                                        Registro</label>
-                                    <input type="date" class="form-control" value="2017-06-01" th:field="*{fecha_registro}" 
-                                        placeholder="Ingresar Fecha de Registro" required>
+                                <div th:if="${citas.id != null}" class="col-md-4 position-relative">
+                                    <label for="validationTooltip03" class="form-label text-diseño-rc2">Servicio</label>
+                                    <select class="form-select form-select mb-3" th:field="*{servicio}"
+                                        th:errorclass="'form-control alert-danger" aria-label=".form-select-lg example" disabled>
+                                        <option value="" selected="selected" >-Seleccionar Servicio-</option>
+                                        <option th:each="servicio : ${servicio}" th:value="${servicio.id}" th:text="${servicio.descripcion}"></option>
+                                    </select>
                                 </div>
-                                <div class="col-md-6 position-relative">
+                                <div class="col-md-4 position-relative">
                                     <label for="exampleFormControlInput3" class="form-label text-diseño-rc2">Fecha de
                                         Cita</label>
                                     <input type="date" class="form-control" value="2017-06-01" th:field="*{fecha_cita}" 
@@ -59,42 +98,36 @@
                                 </div>
 
                                 <div class="col-md-4 position-relative">
-                                    <label for="validationTooltip04" class="form-label text-diseño-rc2">Hora Inicio</label>
-                                    <select class="form-select form-select mb-3" th:field="*{hora_cita_Inicia}">
-                                        <option selected value="8: 00 am">8: 00 am</option>
-                                        <option selected value="9: 00 am">9: 00 am</option>
-                                        <option selected value="10: 00 am">10: 00 am</option>
-                                        <option selected value="11: 00 am">11: 00 am</option>
-                                        <option selected value="12: 00 pm">12: 00 pm</option>
-                                        <option selected value="1: 00 pm">1: 00 pm</option>
-                                        <option selected value="2: 00 pm">2: 00 pm</option>
-                                        <option selected value="3: 00 pm">3: 00 pm</option>
-                                        <option selected value="4: 00 pm">4: 00 pm</option>
+                                    <label for="validationTooltip04" class="form-label text-diseño-rc2">Horario Cita</label>
+                                    <select class="form-select form-select mb-3" th:field="*{hora_cita}">
+                                        <option value="" selected="selected" >-Seleccionar Horario-</option>
+                                        <option selected value="8: 00 - 9: 00 a.m.">8: 00 - 9: 00 a.m.</option>
+                                        <option selected value="9: 00 - 10: 00 a.m.">9: 00 - 10: 00 a.m.</option>
+                                        <option selected value="10: 00 - 11: 00 a.m.">10: 00 - 11: 00 a.m.</option>
+                                        <option selected value="11: 00 a.m. - 12 p.m.">11: 00 a.m. - 12 p.m.</option>
+                                        <option selected value="12: 00 - 1: 00p.m.">12: 00 - 1: 00p.m.</option>
+                                        <option selected value="1: 00 - 2: 00 p.m.">1: 00 - 2: 00 p.m.</option>
+                                        <option selected value="2: 00 - 3: 00 p.m.">2: 00 - 3: 00 p.m.</option>
+                                        <option selected value="3: 00 - 4: 00 p.m.">3: 00 - 4: 00 p.m.</option>
+                                        <option selected value="4: 00 - 5: 00 p.m.">4: 00 - 5: 00 p.m.</option>
                                     </select>
                                 </div>
-                                <div class="col-md-4 position-relative">
-                                    <label for="validationTooltip05" class="form-label text-diseño-rc2">Hora Finaliza
-                                    </label>
-                                    <select class="form-select form-select mb-3" th:field="*{hora_cita_Finaliza}">
-                                        <option selected value="9: 00 am">9: 00 am</option>
-                                        <option selected value="10: 00 am">10: 00 am</option>
-                                        <option selected value="11: 00 am">11: 00 am</option>
-                                        <option selected value="12: 00 am">12: 00 am</option>
-                                        <option selected value="1: 00 pm">1: 00 pm</option>
-                                        <option selected value="2: 00 pm">2: 00 pm</option>
-                                        <option selected value="3: 00 pm">3: 00 pm</option>
-                                        <option selected value="4: 00 pm">4: 00 pm</option>
-                                        <option selected value="5: 00 pm">5: 00 pm</option>
-                                    </select>
-                                </div>
+
                                 <div class="col-md-4 position-relative">
                                     <label for="validationTooltip04" class="form-label text-diseño-rc2">Estado</label>
                                     <select class="form-select form-select mb-3" th:field="*{Estado}"
                                         th:errorclass="'form-control alert-danger" aria-label=".form-select-lg example">
                                         <option selected value="Activo">Registrado</option>
-                                        <option selected value="Cancelado">Cancelado</option>
+                                        <option th:if="${citas.id != null}" selected value="Cancelado">Cancelado</option>
                                     </select>
                                 </div>
+                                <div>
+                                    <label for="validationTooltip03" class="form-label text-diseño-rc2">Observaciones</label>
+                                </div>
+                                <div class="col-lm-6 position-relative">
+                                    <textarea class="form-control" placeholder="Observaciones de la mascota" id="observaciones" th:field="*{Observaciones}" style="height: 100px"></textarea>
+                                </div>
+
                                 <div class="col-12 d-grid">
                                     <button type="submit" id="btn-registrar"
                                         class="btn btn-fondo-rc text-light">REGISTRAR</a></button>
