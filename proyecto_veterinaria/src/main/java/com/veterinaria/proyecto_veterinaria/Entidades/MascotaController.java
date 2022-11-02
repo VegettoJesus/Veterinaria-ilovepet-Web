@@ -30,6 +30,9 @@ public class MascotaController {
     @Autowired
     private PropietarioService propietarioService;
 
+    @Autowired
+    private CitasService citasService;
+
     @GetMapping("/detalleMascota/{id}")
     public String verDetallesMascota(@PathVariable(value = "id") Long id, Map<String, Object> modelo,RedirectAttributes flash){
         Mascota mascota = mascotaService.findOne(id);
@@ -42,6 +45,22 @@ public class MascotaController {
         modelo.put("mascota", mascota);
         modelo.put("titulo",mascota.getNombre());
         return "detalleMascota";
+    }
+
+    @GetMapping("/historialMedico/{id}")
+    public String verHistorialMedico(@PathVariable(value = "id") Long id,@RequestParam(name = "page",defaultValue = "0")int page,Model model, Map<String, Object> modelo,RedirectAttributes flash){
+        Mascota mascota = mascotaService.findOne(id);
+        if(mascota == null){
+            flash.addFlashAttribute("error","La mascota no existe en la base de datos");
+            return "redirect:/gestionMascota";
+        }
+        List<Propietario> listaPropietario = propietarioService.findAll();
+        List<Citas> listaCitas = citasService.findAll();
+        modelo.put("listaPropietario",listaPropietario);
+        modelo.put("listaCitas",listaCitas);
+        modelo.put("mascota", mascota);
+        modelo.put("titulo",mascota.getNombre());
+        return "historialMedico";
     }
 
     @GetMapping("/gestionMascota")
