@@ -74,14 +74,6 @@
                                     <small class="form-text text-danger" th:if="${#fields.hasErrors('precio')}"
                                         th:errors="*{precio}"></small>
                                 </div>
-
-                                <div class="col-md-4 position-relative">
-                                    <label for="fecha_Registro" class="form-label text-diseño-rc2">Fecha Registro</label>
-                                    <input type="date" class="form-control" th:field="*{fecha_Registro}" id="fecha_Registro"
-                                        th:errorclass="'form-control alert-danger'" required autofocus="autofocus">
-                                    <small class="form-text text-danger" th:if="${#fields.hasErrors('fecha_Registro')}"
-                                        th:errors="*{fecha_Registro}"></small>
-                                </div>
                                 <div class="col-md-4 position-relative">
                                     <label for="fecha_Vencimiento" class="form-label text-diseño-rc2">Fecha Vencimiento</label>
                                     <input type="date" class="form-control" th:field="*{fecha_Vencimiento}" id="fecha_Vencimiento"

@@ -222,13 +222,17 @@ describe('Proyecto veterinaria', () => {
     cy.get("[name=\'empleado\']").select('1').invoke('val').then((value)=>{
       cy.log('selected value -'+value)
     })
+    cy.get("[name=\'propietario\']").select('1').invoke('val').then((value)=>{
+      cy.log('selected value -'+value)
+    })
     cy.get("[name=\'mascota\']").select('1').invoke('val').then((value)=>{
       cy.log('selected value -'+value)
     })
     cy.get("[name=\'servicio\']").select('1').invoke('val').then((value)=>{
       cy.log('selected value -'+value)
     })
-    cy.get('#fecha_cita').type('2022-10-19')     
+    cy.get('#fecha_cita').type('2022-10-19')
+    cy.get('#hora_cita').select('8: 00 - 9: 00 a.m.')   
     cy.get('#btn-registrar').click()
     cy.location('pathname').should('eq','/gestionCitas')  
   })
@@ -241,6 +245,9 @@ describe('Proyecto veterinaria', () => {
     cy.get("[name=\'empleado\']").select('1').invoke('val').then((value)=>{
       cy.log('selected value -'+value)
     })
+    cy.get("[name=\'propietario\']").select('1').invoke('val').then((value)=>{
+      cy.log('selected value -'+value)
+    })
     cy.get("[name=\'mascota\']").select('1').invoke('val').then((value)=>{
       cy.log('selected value -'+value)
     })
@@ -248,7 +255,10 @@ describe('Proyecto veterinaria', () => {
       cy.log('selected value -'+value)
     })
     cy.get('#fecha_cita').clear() 
-    cy.get('#fecha_cita').type('2022-10-20')     
+    cy.get('#fecha_cita').type('2022-10-20')
+    cy.get('#hora_cita').select('10: 00 - 11: 00 a.m.')  
+    cy.get('#observaciones').type('La mascota se encuentra bien')
+
     cy.get('#btn-registrar').click()
     cy.location('pathname').should('eq','/gestionCitas')  
   })
@@ -291,7 +301,6 @@ describe('Proyecto veterinaria', () => {
     cy.get('#marca').type('RicoCan')
     cy.get('#precio').clear()
     cy.get('#precio').type('25')
-    cy.get('#fecha_Registro').type('2021-10-03')
     cy.get('#fecha_Vencimiento').type('2022-12-03')
     cy.get('#stock').type('25')
     cy.get("[name=\'categoria\']").select('1').invoke('val').then((value)=>{
@@ -318,7 +327,6 @@ describe('Proyecto veterinaria', () => {
     cy.get('#marca').type('DogShow')
     cy.get('#precio').clear()
     cy.get('#precio').type('25')
-    cy.get('#fecha_Registro').type('2021-10-03')
     cy.get('#fecha_Vencimiento').type('2022-12-03')
     cy.get('#stock').clear()
     cy.get('#stock').type('25')

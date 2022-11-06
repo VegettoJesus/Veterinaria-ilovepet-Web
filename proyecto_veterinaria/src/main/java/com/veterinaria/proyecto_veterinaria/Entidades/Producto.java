@@ -1,5 +1,6 @@
 package com.veterinaria.proyecto_veterinaria.Entidades;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,10 +42,7 @@ public class Producto {
     @NotNull
     private Date fecha_Vencimiento;
 
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(iso = ISO.DATE)
-    @NotNull
-    private Date fecha_Registro;
+    private LocalDateTime fecha_Registro = LocalDateTime.now();
 
     @NotEmpty
     private String marca;
@@ -109,11 +108,11 @@ public class Producto {
         this.fecha_Vencimiento = fecha_Vencimiento;
     }
 
-    public Date getFecha_Registro() {
+    public LocalDateTime getFecha_Registro() {
         return fecha_Registro;
     }
 
-    public void setFecha_Registro(Date fecha_Registro) {
+    public void setFecha_Registro(LocalDateTime fecha_Registro) {
         this.fecha_Registro = fecha_Registro;
     }
 
@@ -172,8 +171,13 @@ public class Producto {
         this.stock -= stock;
     }
 
+    @PrePersist
+    public void asignarFechaRegistro(){
+        fecha_Registro = LocalDateTime.now();
+    }
+
     public Producto(Long id, @NotEmpty String codigo, @NotEmpty String nombre, @NotEmpty String descripcion,
-            @NotNull float precio, @NotNull Date fecha_Vencimiento, @NotNull Date fecha_Registro,
+            @NotNull float precio, @NotNull Date fecha_Vencimiento, LocalDateTime fecha_Registro,
             @NotEmpty String marca, @NotEmpty String nombre_Proveedor, @NotNull Long ruc_proveedor, @NotNull Long stock,
             Categoria categoria) {
         this.id = id;
@@ -190,8 +194,9 @@ public class Producto {
         this.categoria = categoria;
     }
 
+
     public Producto(@NotEmpty String codigo, @NotEmpty String nombre, @NotEmpty String descripcion,
-            @NotNull float precio, @NotNull Date fecha_Vencimiento, @NotNull Date fecha_Registro,
+            @NotNull float precio, @NotNull Date fecha_Vencimiento, LocalDateTime fecha_Registro,
             @NotEmpty String marca, @NotEmpty String nombre_Proveedor, @NotNull Long ruc_proveedor, @NotNull Long stock,
             Categoria categoria) {
         this.codigo = codigo;
@@ -222,5 +227,7 @@ public class Producto {
         this.precio = precio;
         this.stock = stock;
     }
+
+    
     
 }
